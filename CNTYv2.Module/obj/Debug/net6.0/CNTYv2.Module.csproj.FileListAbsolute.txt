@@ -1,0 +1,12 @@
+C:\Users\cuong\source\repos\CNTYv2\CNTYv2.Module\bin\Debug\net6.0\CNTYv2.Module.deps.json
+C:\Users\cuong\source\repos\CNTYv2\CNTYv2.Module\bin\Debug\net6.0\CNTYv2.Module.dll
+C:\Users\cuong\source\repos\CNTYv2\CNTYv2.Module\bin\Debug\net6.0\CNTYv2.Module.pdb
+C:\Users\cuong\source\repos\CNTYv2\CNTYv2.Module\obj\Debug\net6.0\CNTYv2.Module.csproj.AssemblyReference.cache
+C:\Users\cuong\source\repos\CNTYv2\CNTYv2.Module\obj\Debug\net6.0\CNTYv2.Module.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cuong\source\repos\CNTYv2\CNTYv2.Module\obj\Debug\net6.0\CNTYv2.Module.AssemblyInfoInputs.cache
+C:\Users\cuong\source\repos\CNTYv2\CNTYv2.Module\obj\Debug\net6.0\CNTYv2.Module.AssemblyInfo.cs
+C:\Users\cuong\source\repos\CNTYv2\CNTYv2.Module\obj\Debug\net6.0\CNTYv2.Module.csproj.CoreCompileInputs.cache
+C:\Users\cuong\source\repos\CNTYv2\CNTYv2.Module\obj\Debug\net6.0\CNTYv2.Module.dll
+C:\Users\cuong\source\repos\CNTYv2\CNTYv2.Module\obj\Debug\net6.0\refint\CNTYv2.Module.dll
+C:\Users\cuong\source\repos\CNTYv2\CNTYv2.Module\obj\Debug\net6.0\CNTYv2.Module.pdb
+C:\Users\cuong\source\repos\CNTYv2\CNTYv2.Module\obj\Debug\net6.0\ref\CNTYv2.Module.dll
