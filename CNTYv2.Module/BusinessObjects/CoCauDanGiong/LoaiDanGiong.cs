@@ -39,6 +39,7 @@ namespace CNTYv2.Module.BusinessObjects.CoCauDanGiong
         string moTa;
         string tenLoaiDanGiong;
         [XafDisplayName("Tên loại đàn giống")]
+        [RuleRequiredField("Bắt buộc phải có LoaiDanGiong.TenLoaiDanGiong", DefaultContexts.Save, "Trường dữ liệu không được để trống")]
         public string TenLoaiDanGiong
         {
             get => tenLoaiDanGiong;
@@ -46,6 +47,7 @@ namespace CNTYv2.Module.BusinessObjects.CoCauDanGiong
         }
         LoaiVatNuoi loaiVatNuoi;
         [XafDisplayName("Loại động vật chăn nuôi")]
+        [RuleRequiredField("Bắt buộc phải có LoaiDanGiong.LoaiVatNuoi", DefaultContexts.Save, "Trường dữ liệu không được để trống")]
         [Association("LoaiVatNuoi-LoaiDanGiongs")]
         public LoaiVatNuoi LoaiVatNuoi
         {
@@ -58,6 +60,7 @@ namespace CNTYv2.Module.BusinessObjects.CoCauDanGiong
             get => moTa;
             set => SetPropertyValue(nameof(MoTa), ref moTa, value);
         }
+        [XafDisplayName("Cơ cấu đàn giống")]
         [Association("LoaiDanGiong-CoCauDanGiongs")]
         public XPCollection<CoCauDanGiong> CoCauDanGiongs
         {

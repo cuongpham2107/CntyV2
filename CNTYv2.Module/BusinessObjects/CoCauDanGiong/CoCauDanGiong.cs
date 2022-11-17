@@ -39,12 +39,14 @@ namespace CNTYv2.Module.BusinessObjects.CoCauDanGiong
         string dTV;
         string noiDung;
         [XafDisplayName("Nội dung")]
+        [RuleRequiredField("Bắt buộc phải có CoCauDanGiong.NoiDung", DefaultContexts.Save, "Trường dữ liệu không được để trống")]
         public string NoiDung
         {
             get => noiDung;
             set => SetPropertyValue(nameof(NoiDung), ref noiDung, value);
         }
         [XafDisplayName("Loại đàn giống")]
+        [RuleRequiredField("Bắt buộc phải có CoCauDanGiong.LoaiDanGiong", DefaultContexts.Save, "Trường dữ liệu không được để trống")]
         [Association("LoaiDanGiong-CoCauDanGiongs")]
         public LoaiDanGiong LoaiDanGiong
         {
@@ -65,10 +67,5 @@ namespace CNTYv2.Module.BusinessObjects.CoCauDanGiong
         }
        
     }
-    enum Loai_Cc
-    {
-        [XafDisplayName("Nái sinh sản")] nss = 1,
-        [XafDisplayName("Cái hậu bị")] chb = 2,
-
-    }
+    
 }

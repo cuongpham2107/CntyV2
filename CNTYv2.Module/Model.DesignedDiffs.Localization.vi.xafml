@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <ActionDesign>
+    <Actions>
+      <Action Id="Delete" Caption="Xoá" />
+      <Action Id="DialogClose" Caption="Đóng" />
+      <Action Id="New" Caption="Tạo mới" />
+      <Action Id="Refresh" Caption="Tải lại" />
+      <Action Id="RefreshAction" Caption="Tải lại" />
+      <Action Id="ReportViewerDialogControllerV2_Close" Caption="Đóng" />
+      <Action Id="Save" Caption="Lưu" />
+    </Actions>
+    <ActionToContainerMapping>
+      <ActionContainer Id="Save" Caption="Lưu" />
+    </ActionToContainerMapping>
+  </ActionDesign>
+  <BOModel>
+    <Class Name="DevExpress.Persistent.BaseImpl.PermissionPolicy.PermissionPolicyObjectPermissionsObject">
+      <OwnMembers>
+        <Member Name="DeleteState" Caption="Xoá" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.Persistent.BaseImpl.PermissionPolicy.PermissionPolicyTypePermissionObject">
+      <OwnMembers>
+        <Member Name="DeleteState" Caption="Xoá" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
+  <Localization>
+    <LocalizationGroup Name="DialogButtons">
+      <LocalizationItem Name="Close" Value="Đóng" />
+      <LocalizationItem Name="Delete" Value="Xoá" />
+    </LocalizationGroup>
+    <LocalizationGroup Name="Enums">
+      <LocalizationGroup Name="DevExpress.Data.Filtering.Aggregate">
+        <LocalizationItem Name="Count" Value="Tổng: " />
+      </LocalizationGroup>
+      <LocalizationGroup Name="DevExpress.ExpressApp.Security.ObjectAccess">
+        <LocalizationItem Name="Delete" Value="Xoá" />
+      </LocalizationGroup>
+      <LocalizationGroup Name="DevExpress.ExpressApp.Security.SecurityRequestOperations">
+        <LocalizationItem Name="Delete" Value="Xoá" />
+      </LocalizationGroup>
+    </LocalizationGroup>
+    <LocalizationGroup Name="Messages">
+      <LocalizationItem Name="Delete" Value="Xoá" />
+    </LocalizationGroup>
+  </Localization>
+  <NavigationItems>
+    <Items>
+      <Item Id="Quản lý chất thải" Caption="🏭 Quản lý chất thải" />
+      <Item Id="Quản lý đàn giống" Caption="🐖 Quản lý đàn giống" />
+      <Item Id="Quản lý thức ăn chăn nuôi" Caption="🌾 Quản lý thức ăn chăn nuôi" />
+      <Item Id="Quản lý trang trại" Caption="🏡 Quản lý trang trại" />
+      <Item Id="Reports" Caption="🖨 Báo cáo">
+        <Items>
+          <Item Id="ReportsV2" Caption="Báo cáo" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <Validation>
+    <Contexts>
+      <ValidationContext Id="Delete" Caption="Xoá" />
+      <ValidationContext Id="Save" Caption="Lưu" />
+    </Contexts>
+  </Validation>
+</Application>

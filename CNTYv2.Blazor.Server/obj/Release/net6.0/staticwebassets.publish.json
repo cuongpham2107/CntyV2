@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ETyDbLclM3GHVFe+OTEYgt7DDAaz1wWRzSa/H1geoNc=",
+  "Hash": "uZCRs6WvUrCkxMy9e8MK89UTCBRSvPkbjZN85yi3YDo=",
   "Source": "CNTYv2.Blazor.Server",
   "BasePath": "_content/CNTYv2.Blazor.Server",
   "Mode": "Default",
@@ -3636,6 +3636,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\cuong\\source\\repos\\CNTYv2\\CNTYv2.Blazor.Server\\wwwroot\\images\\logo.png",
+      "SourceId": "CNTYv2.Blazor.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\cuong\\source\\repos\\CNTYv2\\CNTYv2.Blazor.Server\\wwwroot\\",
+      "BasePath": "_content/CNTYv2.Blazor.Server",
+      "RelativePath": "images/logo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\logo.png"
     },
     {
       "Identity": "C:\\Users\\cuong\\source\\repos\\CNTYv2\\CNTYv2.Blazor.Server\\wwwroot\\images\\Logo.svg",

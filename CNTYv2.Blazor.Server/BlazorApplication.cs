@@ -6,14 +6,36 @@ using DevExpress.ExpressApp.Security.ClientServer;
 using DevExpress.ExpressApp.SystemModule;
 using DevExpress.ExpressApp.Xpo;
 using CNTYv2.Blazor.Server.Services;
+using CNTYv2.Blazor.Server.Templates;
+using DevExpress.ExpressApp.Templates;
+using DevExpress.ExpressApp.Blazor.Templates;
 
 namespace CNTYv2.Blazor.Server;
 
 public class CNTYv2BlazorApplication : BlazorApplication {
+    protected override IFrameTemplate CreateDefaultTemplate(TemplateContext context)
+    {
+
+        if (context == TemplateContext.LogonWindow)
+        {
+            return new CustomLogonWindowTemplate();
+        }
+        return base.CreateDefaultTemplate(context);
+    }
     public CNTYv2BlazorApplication() {
         ApplicationName = "CNTYv2";
         CheckCompatibilityType = DevExpress.ExpressApp.CheckCompatibilityType.DatabaseSchema;
         DatabaseVersionMismatch += CNTYv2BlazorApplication_DatabaseVersionMismatch;
+
+        CustomizeTemplate += (s, e) => {
+            if (e.Template is IPopupWindowTemplateSize size)
+            {
+                size.MaxWidth = "80vw";
+                //size.Width = "1000px";
+                //size.MaxHeight = "70vh";
+                //size.Height = "800px";
+            }
+        };
     }
     protected override void OnSetupStarted() {
         base.OnSetupStarted();

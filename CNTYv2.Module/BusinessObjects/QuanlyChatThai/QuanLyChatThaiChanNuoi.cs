@@ -11,12 +11,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using static CNTYv2.Module.BusinessObjects.Common;
 
 namespace CNTYv2.Module.BusinessObjects.QuanlyChatThai
 {
     [DefaultClassOptions]
     [NavigationItem(Menu.ChatThai)]
-    [DefaultProperty(nameof(LoaiHinhChanNuoi))]
+    [DefaultProperty(nameof(LHChanNuoi))]
     [ImageName("BO_Contact")]
     [XafDisplayName("Chất thải chăn nuôi")]
     [DefaultListViewOptions(MasterDetailMode.ListViewOnly, true, NewItemRowPosition.Top)]
@@ -39,12 +40,12 @@ namespace CNTYv2.Module.BusinessObjects.QuanlyChatThai
         string coGiayPhepMoiTruong_KeHoachBVMT;
         string coBaoCaoDanhGiaTacDongMoiTruong;
         string tongSoCoSo;
-        LoaiHinhChanNuoi loaiHinhChanNuoi;
+        LHChanNuoi lHChanNuoi;
         [XafDisplayName("Loại hình chăn nuôi")]
-        public LoaiHinhChanNuoi LoaiHinhChanNuoi
+        public LHChanNuoi LHChanNuoi
         {
-            get => loaiHinhChanNuoi;
-            set => SetPropertyValue(nameof(LoaiHinhChanNuoi), ref loaiHinhChanNuoi, value);
+            get => lHChanNuoi;
+            set => SetPropertyValue(nameof(LHChanNuoi), ref lHChanNuoi, value);
         }
         [XafDisplayName("Tổng số cơ sở")]
         public string TongSoCoSo
@@ -77,4 +78,5 @@ namespace CNTYv2.Module.BusinessObjects.QuanlyChatThai
             set => SetPropertyValue(nameof(KhongCoBienPhap), ref khongCoBienPhap, value);
         }
     }
+    
 }

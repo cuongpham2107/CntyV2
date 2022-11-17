@@ -34,6 +34,8 @@ namespace CNTYv2.Module.BusinessObjects.ThucAnChanNuoi
 
         }
 
+        FileData fileDuLieu;
+        string ghiChu;
         string tieuDe;
         DateTime ngayCap;
         string soGiayChungNhan;
@@ -55,6 +57,7 @@ namespace CNTYv2.Module.BusinessObjects.ThucAnChanNuoi
             }
         }
         CoSoSanXuatThucAnChanNuoi coSoSanXuatThucAnChanNuoi;
+        [RuleRequiredField("Bắt buộc phải có GiayChungNhanSanXuatThucAnCN.CoSoSanXuatThucAnChanNuoi", DefaultContexts.Save, "Trường dữ liệu không được để trống")]
         [XafDisplayName("Cơ sở sản xuất")]
         public CoSoSanXuatThucAnChanNuoi CoSoSanXuatThucAnChanNuoi
         {
@@ -83,9 +86,9 @@ namespace CNTYv2.Module.BusinessObjects.ThucAnChanNuoi
         {
             get
             {
-                if(!IsLoading && !IsSaving)
+                if (!IsLoading && !IsSaving)
                 {
-                    if(LoaiSanPhamChanNuoi != null)
+                    if (LoaiSanPhamChanNuoi != null)
                     {
                         return $"{LoaiSanPhamChanNuoi.TenSanPhamChanNuoi}, {LoaiSanPhamChanNuoi.CongXuatThietKe}";
                     }
@@ -94,16 +97,30 @@ namespace CNTYv2.Module.BusinessObjects.ThucAnChanNuoi
             }
         }
         [XafDisplayName("Số giấy chứng nhận")]
+        [RuleRequiredField("Bắt buộc phải có GiayChungNhanSanXuatThucAnCN.SoGiayChungNhan", DefaultContexts.Save, "Trường dữ liệu không được để trống")]
         public string SoGiayChungNhan
         {
             get => soGiayChungNhan;
             set => SetPropertyValue(nameof(SoGiayChungNhan), ref soGiayChungNhan, value);
         }
         [XafDisplayName("Ngày cấp")]
+        [RuleRequiredField("Bắt buộc phải có GiayChungNhanSanXuatThucAnCN.NgayCap", DefaultContexts.Save, "Trường dữ liệu không được để trống")]
         public DateTime NgayCap
         {
             get => ngayCap;
             set => SetPropertyValue(nameof(NgayCap), ref ngayCap, value);
+        }
+
+        public string GhiChu
+        {
+            get => ghiChu;
+            set => SetPropertyValue(nameof(GhiChu), ref ghiChu, value);
+        }
+        [XafDisplayName("File Giấy chứng nhận")]
+        public FileData FileDuLieu
+        {
+            get => fileDuLieu;
+            set => SetPropertyValue(nameof(FileDuLieu), ref fileDuLieu, value);
         }
     }
 }

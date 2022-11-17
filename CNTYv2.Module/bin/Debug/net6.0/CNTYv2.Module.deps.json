@@ -28,6 +28,11 @@
         },
         "runtime": {
           "CNTYv2.Module.dll": {}
+        },
+        "resources": {
+          "vi/CNTYv2.Module.resources.dll": {
+            "locale": "vi"
+          }
         }
       },
       "DevExpress.Charts/22.1.6": {

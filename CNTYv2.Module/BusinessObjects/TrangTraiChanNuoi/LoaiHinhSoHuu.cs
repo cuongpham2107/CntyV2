@@ -36,6 +36,7 @@ namespace CNTYv2.Module.BusinessObjects.TrangTraiChanNuoi
         string mota;
         string tenLoaiHinh;
         [XafDisplayName("Tên loại hình")]
+        [RuleRequiredField("Bắt buộc phải có LoaiHinhSoHuu.TenLoaiHinh", DefaultContexts.Save, "Trường dữ liệu không được để trống")]
         public string TenLoaiHinh
         {
             get => tenLoaiHinh;

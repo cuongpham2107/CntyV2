@@ -34,19 +34,28 @@ namespace CNTYv2.Module.BusinessObjects.ThucAnChanNuoi
 
         }
 
+        string ghiChu;
         string congXuatThietKe;
         string tenLoaiThucAn;
         [XafDisplayName("Sản phẩm chăn nuôi")]
+        [RuleRequiredField("Bắt buộc phải có LoaiSanPhamChanNuoi.TenSanPhamChanNuoi", DefaultContexts.Save, "Trường dữ liệu không được để trống")]
         public string TenSanPhamChanNuoi
         {
             get => tenLoaiThucAn;
             set => SetPropertyValue(nameof(TenSanPhamChanNuoi), ref tenLoaiThucAn, value);
         }
         [XafDisplayName("Công xuất thiết kế")]
+        [RuleRequiredField("Bắt buộc phải có LoaiSanPhamChanNuoi.CongXuatThietKe", DefaultContexts.Save, "Trường dữ liệu không được để trống")]
         public string CongXuatThietKe
         {
             get => congXuatThietKe;
             set => SetPropertyValue(nameof(CongXuatThietKe), ref congXuatThietKe, value);
+        }
+        [XafDisplayName("Ghi chú")]
+        public string GhiChu
+        {
+            get => ghiChu;
+            set => SetPropertyValue(nameof(GhiChu), ref ghiChu, value);
         }
     }
 }

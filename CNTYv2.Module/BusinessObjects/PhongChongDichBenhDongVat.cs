@@ -19,7 +19,7 @@ namespace CNTYv2.Module.BusinessObjects
     [NavigationItem(Menu.DataMenuItem)]
     [DefaultProperty(nameof(TenDichBenh))]
     [ImageName("BO_Contact")]
-    [XafDisplayName("phòng, chống dịch bệnh động vật")]
+    [XafDisplayName("Phòng, chống dịch bệnh động vật")]
     [DefaultListViewOptions(MasterDetailMode.ListViewOnly, true, NewItemRowPosition.Top)]
     [ListViewFindPanel(true)]
     [LookupEditorMode(LookupEditorMode.AllItemsWithSearch)]

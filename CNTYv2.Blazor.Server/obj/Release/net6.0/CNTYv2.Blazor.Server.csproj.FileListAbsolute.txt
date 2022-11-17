@@ -158,3 +158,4 @@ C:\Users\cuong\source\repos\CNTYv2\CNTYv2.Blazor.Server\obj\Release\net6.0\refin
 C:\Users\cuong\source\repos\CNTYv2\CNTYv2.Blazor.Server\obj\Release\net6.0\CNTYv2.Blazor.Server.pdb
 C:\Users\cuong\source\repos\CNTYv2\CNTYv2.Blazor.Server\obj\Release\net6.0\CNTYv2.Blazor.Server.genruntimeconfig.cache
 C:\Users\cuong\source\repos\CNTYv2\CNTYv2.Blazor.Server\obj\Release\net6.0\ref\CNTYv2.Blazor.Server.dll
+C:\Users\cuong\source\repos\CNTYv2\CNTYv2.Blazor.Server\bin\Release\net6.0\vi\CNTYv2.Module.resources.dll

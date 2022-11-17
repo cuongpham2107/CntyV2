@@ -1,12 +1,30 @@
-﻿<?xml version="1.0" ?>
-<Application Title="CNTYv2">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Title="Quản lý Chăn Nuôi Thú Y" Description="Phần mềm Quản lý chăn nuôi thú y " Company="Sở Nông nghiệp và Phát triển Nông thôn tỉnh Bắc Giang" Copyright="KennaTech JSC.">
   <BOModel>
     <Class Name="DevExpress.Persistent.BaseImpl.PermissionPolicy.PermissionPolicyUser" Caption="Base User" />
   </BOModel>
+  <NavigationItems>
+    <Items>
+      <Item Id="State Machine" Removed="True" />
+    </Items>
+  </NavigationItems>
   <Options>
     <LayoutManagerOptions RequiredFieldMark="*" />
   </Options>
+  <SchemaModules>
+    <SchemaModule Name="CloneObjectModule" Version="22.1.6.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="22.1.6.0" IsNewNode="True" />
+  </SchemaModules>
   <Views>
     <ListView Id="ApplicationUser_ListView" Caption="Users" />
+    <ListView Id="TrangTraiChanNuoi_ListView" IsFooterVisible="False" MasterDetailMode="ListViewOnly">
+      <Columns>
+        <ColumnInfo Id="TenTrangTrai">
+          <Summary>
+            <ColumnSummaryItem Id="Tổng" SummaryType="Count" IsNewNode="True" />
+          </Summary>
+        </ColumnInfo>
+      </Columns>
+    </ListView>
   </Views>
 </Application>

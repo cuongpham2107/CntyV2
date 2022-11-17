@@ -134,3 +134,4 @@ C:\Users\cuong\source\repos\CNTYv2\CNTYv2.Blazor.Server\obj\Release\net6.0\PubTm
 C:\Users\cuong\source\repos\CNTYv2\CNTYv2.Blazor.Server\obj\Release\net6.0\PubTmp\Out\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 C:\Users\cuong\source\repos\CNTYv2\CNTYv2.Blazor.Server\obj\Release\net6.0\PubTmp\Out\CNTYv2.Module.dll
 C:\Users\cuong\source\repos\CNTYv2\CNTYv2.Blazor.Server\obj\Release\net6.0\PubTmp\Out\CNTYv2.Module.pdb
+C:\Users\cuong\source\repos\CNTYv2\CNTYv2.Blazor.Server\obj\Release\net6.0\PubTmp\Out\vi\CNTYv2.Module.resources.dll

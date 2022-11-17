@@ -40,10 +40,18 @@ namespace CNTYv2.Module.BusinessObjects.TrangTraiChanNuoi
         string ghiChu;
         string noiDung;
         [XafDisplayName("Nội dung")]
+        [RuleRequiredField("Bắt buộc phải có BPXLMT_ChanNuoiNongHo.NoiDung", DefaultContexts.Save, "Trường dữ liệu không được để trống")]
         public string NoiDung
         {
             get => noiDung;
             set => SetPropertyValue(nameof(NoiDung), ref noiDung, value);
+        }
+        [XafDisplayName("Phân loại xử lý môi trường")]
+      
+        public NongHo_NongTrai NongHo_NongTrai
+        {
+            get => nongHo_NongTrai;
+            set => SetPropertyValue(nameof(NongHo_NongTrai), ref nongHo_NongTrai, value);
         }
         [XafDisplayName("Ghi chú")]
         public string GhiChu
@@ -51,21 +59,16 @@ namespace CNTYv2.Module.BusinessObjects.TrangTraiChanNuoi
             get => ghiChu;
             set => SetPropertyValue(nameof(GhiChu), ref ghiChu, value);
         }
-        [XafDisplayName("Phân loại chăn nuôi")]
-        public NongHo_NongTrai NongHo_NongTrai
-        {
-            get => nongHo_NongTrai;
-            set => SetPropertyValue(nameof(NongHo_NongTrai), ref nongHo_NongTrai, value);
-        }
-        [Association("BPXLMT_ChanNuoiNongHo-LoaiVatNuois")]
-        public XPCollection<LoaiVatNuoi> LoaiVatNuois
+
+        [XafDisplayName("Trang trại chăn nuôi")]
+        [Association("TrangTraiChanNuoi-BPXLMT_ChanNuoiNongHos")]
+        public XPCollection<TrangTraiChanNuoi> TrangTraiChanNuois
         {
             get
             {
-                return GetCollection<LoaiVatNuoi>(nameof(LoaiVatNuois));
+                return GetCollection<TrangTraiChanNuoi>(nameof(TrangTraiChanNuois));
             }
         }
-
     }
     public enum NongHo_NongTrai
     {

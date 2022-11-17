@@ -38,12 +38,14 @@ namespace CNTYv2.Module.BusinessObjects.ThucAnChanNuoi
         string diaChi;
         string tenCoSoSanXuat;
         [XafDisplayName("Tên cơ sở")]
+        [RuleRequiredField("Bắt buộc phải có CoSoSanXuatThucAnChanNuoi.TenCoSoSanXuat", DefaultContexts.Save, "Trường dữ liệu không được để trống")]
         public string TenCoSoSanXuat
         {
             get => tenCoSoSanXuat;
             set => SetPropertyValue(nameof(TenCoSoSanXuat), ref tenCoSoSanXuat, value);
         }
         LoaiSanPhamChanNuoi loaiSanPhamChanNuoi;
+        [RuleRequiredField("Bắt buộc phải có CoSoSanXuatThucAnChanNuoi.LoaiSanPhamChanNuoi", DefaultContexts.Save, "Trường dữ liệu không được để trống")]
         [XafDisplayName("Sản phẩm chăn nuôi")]
         public LoaiSanPhamChanNuoi LoaiSanPhamChanNuoi
         {
@@ -51,6 +53,7 @@ namespace CNTYv2.Module.BusinessObjects.ThucAnChanNuoi
             set => SetPropertyValue(nameof(LoaiSanPhamChanNuoi), ref loaiSanPhamChanNuoi, value);
         }
         [XafDisplayName("Địa chỉ")]
+        [RuleRequiredField("Bắt buộc phải có CoSoSanXuatThucAnChanNuoi.DiaChi", DefaultContexts.Save, "Trường dữ liệu không được để trống")]
         public string DiaChi
         {
             get => diaChi;

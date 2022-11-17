@@ -38,6 +38,7 @@ namespace CNTYv2.Module.BusinessObjects.TrangTraiChanNuoi
         string moTa;
         string tenLoaiHinh;
         [XafDisplayName("Loại hình chăn nuôi")]
+        [RuleRequiredField("Bắt buộc phải có PhanLoaiCoSoChanNuoi.TenLoaiHinh", DefaultContexts.Save, "Trường dữ liệu không được để trống")]
         public string TenLoaiHinh
         {
             get => tenLoaiHinh;
@@ -49,7 +50,15 @@ namespace CNTYv2.Module.BusinessObjects.TrangTraiChanNuoi
             get => moTa;
             set => SetPropertyValue(nameof(MoTa), ref moTa, value);
         }
-
+        [XafDisplayName("Trang trại chăn nuôi")]
+        [Association("PhanLoaiCoSoChanNuoi-TrangTraiChanNuois")]
+        public XPCollection<TrangTraiChanNuoi> TrangTraiChanNuois
+        {
+            get
+            {
+                return GetCollection<TrangTraiChanNuoi>(nameof(TrangTraiChanNuois));
+            }
+        }
 
     }
 }

@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using static CNTYv2.Module.BusinessObjects.Common;
 
 namespace CNTYv2.Module.BusinessObjects.TrangTraiChanNuoi
 {
@@ -34,25 +35,29 @@ namespace CNTYv2.Module.BusinessObjects.TrangTraiChanNuoi
 
         }
 
+        LHChanNuoi lHChanNuoi;
         string ghiChu;
-        string quyMoChanNuoi;
+        int soLuongVatNuoi;
         string soDienThoai;
         string diaChi;
         LoaiHinhSoHuu loaiHinhSoHuu;
         string tenTrangTrai;
         [XafDisplayName("Tên trang trại")]
+        [RuleRequiredField("Bắt buộc phải có TrangTraiChanNuoi.TenTrangTrai", DefaultContexts.Save, "Trường dữ liệu không được để trống")]
         public string TenTrangTrai
         {
             get => tenTrangTrai;
             set => SetPropertyValue(nameof(TenTrangTrai), ref tenTrangTrai, value);
         }
         [XafDisplayName("Loại hình sở hữu")]
+        [RuleRequiredField("Bắt buộc phải có TrangTraiChanNuoi.LoaiHinhSoHuu", DefaultContexts.Save, "Trường dữ liệu không được để trống")]
         public LoaiHinhSoHuu LoaiHinhSoHuu
         {
             get => loaiHinhSoHuu;
             set => SetPropertyValue(nameof(LoaiHinhSoHuu), ref loaiHinhSoHuu, value);
         }
         [XafDisplayName("Địa chỉ")]
+        [RuleRequiredField("Bắt buộc phải có TrangTraiChanNuoi.DiaChi", DefaultContexts.Save, "Trường dữ liệu không được để trống")]
         public string DiaChi
         {
             get => diaChi;
@@ -64,7 +69,7 @@ namespace CNTYv2.Module.BusinessObjects.TrangTraiChanNuoi
             get => soDienThoai;
             set => SetPropertyValue(nameof(SoDienThoai), ref soDienThoai, value);
         }
-        
+
         GiayChungNhanChanNuoiDaCap giayChungNhanChanNuoiDaCap;
         [XafDisplayName("Giấy chứng nhận")]
         public GiayChungNhanChanNuoiDaCap GiayChungNhanChanNuoiDaCap
@@ -72,15 +77,47 @@ namespace CNTYv2.Module.BusinessObjects.TrangTraiChanNuoi
             get => giayChungNhanChanNuoiDaCap;
             set => SetPropertyValue(nameof(GiayChungNhanChanNuoiDaCap), ref giayChungNhanChanNuoiDaCap, value);
         }
-        [XafDisplayName("Quy mô chăn nuôi")]
-        public string QuyMoChanNuoi
+        [XafDisplayName("Số lượng vật nuôi")]
+        public int SoLuongVatNuoi
         {
-            get => quyMoChanNuoi;
-            set => SetPropertyValue(nameof(QuyMoChanNuoi), ref quyMoChanNuoi, value);
+            get => soLuongVatNuoi;
+            set => SetPropertyValue(nameof(SoLuongVatNuoi), ref soLuongVatNuoi, value);
+        }
+        [XafDisplayName("Quy mô chăn nuôi")]
+        [ModelDefault("AllowEdit","False")]
+        public LHChanNuoi LHChanNuoi
+        {
+            get
+            {
+                if(!IsLoading && !IsSaving)
+                {
+                    
+                    if(SoLuongVatNuoi >= 10000)
+                    {
+                        return LHChanNuoi.lon;
+                    }
+                    else if (SoLuongVatNuoi >= 5000 && SoLuongVatNuoi <= 10000)
+                    {
+                        return LHChanNuoi.vua;
+                    }
+                    else if (SoLuongVatNuoi >= 1000 && SoLuongVatNuoi <= 5000)
+                    {
+                        return LHChanNuoi.nho;
+                    }
+                    else
+                    {
+                        return LHChanNuoi.cnnh;
+                    }
+
+
+                }
+                return LHChanNuoi.chuchon;
+            }
         }
 
-       
         PhanLoaiCoSoChanNuoi phanLoaiCoSoChanNuoi;
+        [Association("PhanLoaiCoSoChanNuoi-TrangTraiChanNuois")]
+        [RuleRequiredField("Bắt buộc phải có TrangTraiChanNuoi.PhanLoaiCoSoChanNuoi", DefaultContexts.Save, "Trường dữ liệu không được để trống")]
         [XafDisplayName("Phân loại chăn nuôi")]
         public PhanLoaiCoSoChanNuoi PhanLoaiCoSoChanNuoi
         {
@@ -89,6 +126,7 @@ namespace CNTYv2.Module.BusinessObjects.TrangTraiChanNuoi
         }
         LoaiVatNuoi loaiVatNuoi;
         [XafDisplayName("Loại vật nuôi")]
+        [RuleRequiredField("Bắt buộc phải có TrangTraiChanNuoi.LoaiVatNuoi", DefaultContexts.Save, "Trường dữ liệu không được để trống")]
         [Association("LoaiVatNuoi-TrangTraiChanNuois")]
         public LoaiVatNuoi LoaiVatNuoi
         {
@@ -101,6 +139,14 @@ namespace CNTYv2.Module.BusinessObjects.TrangTraiChanNuoi
             get => ghiChu;
             set => SetPropertyValue(nameof(GhiChu), ref ghiChu, value);
         }
-
+        [XafDisplayName("Biện pháp xử lý môi trường")]
+        [Association("TrangTraiChanNuoi-BPXLMT_ChanNuoiNongHos")]
+        public XPCollection<BPXLMT_ChanNuoiNongHo> BPXLMT_ChanNuoiNongHos
+        {
+            get
+            {
+                return GetCollection<BPXLMT_ChanNuoiNongHo>(nameof(BPXLMT_ChanNuoiNongHos));
+            }
+        }
     }
 }

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <BOModel Id="BOModel">
+    <Class Name="CNTYv2.Module.BusinessObjects.VBHD_LuatChanNuoi">
+      <AppearanceRules Id="AppearanceRules">
+        <AppearanceRule Id="HideNam" Criteria="[LoaiTienDo] &lt;&gt; ##Enum#CNTYv2.Module.BusinessObjects.LoaiTienDo,n#" AppearanceItemType="ViewItem" Visibility="Hide" Context="Any" />
+        <AppearanceRule Id="HideNamDenNam" Criteria="[LoaiTienDo] &lt;&gt; ##Enum#CNTYv2.Module.BusinessObjects.LoaiTienDo,nn#" AppearanceItemType="ViewItem" Visibility="Hide" Context="Any" />
+        <AppearanceRule Id="HideText" Criteria="[LoaiTienDo] &lt;&gt; ##Enum#CNTYv2.Module.BusinessObjects.LoaiTienDo,t#" AppearanceItemType="ViewItem" Visibility="Hide" Context="Any" />
+      </AppearanceRules>
+    </Class>
+  </BOModel>
+</Application>

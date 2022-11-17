@@ -1,16 +1,19 @@
 ﻿using DevExpress.Data.Filtering;
 using DevExpress.ExpressApp;
+using DevExpress.ExpressApp.ConditionalAppearance;
 using DevExpress.ExpressApp.DC;
 using DevExpress.ExpressApp.Model;
 using DevExpress.Persistent.Base;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Persistent.Validation;
 using DevExpress.Xpo;
+using Google.Protobuf.WellKnownTypes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using static CNTYv2.Module.BusinessObjects.Common;
 
 namespace CNTYv2.Module.BusinessObjects
 {
@@ -35,7 +38,10 @@ namespace CNTYv2.Module.BusinessObjects
             
         }
 
-        TienDoVanBanLuat tienDoThucHien;
+        string tienDo;
+        string namDenNam;
+        string nam;
+        LoaiTienDo loaiTienDo;
         string ghiChu;
         string tenVanBan;
         [XafDisplayName("Tên văn bản")]
@@ -44,11 +50,32 @@ namespace CNTYv2.Module.BusinessObjects
             get => tenVanBan;
             set => SetPropertyValue(nameof(TenVanBan), ref tenVanBan, value);
         }
-        [XafDisplayName("Tiến độ thực hiện")]
-        public TienDoVanBanLuat TienDoThucHien
+        [XafDisplayName("Loại tiến độ")]
+        public LoaiTienDo LoaiTienDo
         {
-            get => tienDoThucHien;
-            set => SetPropertyValue(nameof(TienDoThucHien), ref tienDoThucHien, value);
+            get => loaiTienDo;
+            set => SetPropertyValue(nameof(LoaiTienDo), ref loaiTienDo, value);
+        }
+        [XafDisplayName("Năm")]
+        //[Appearance("HideNam", AppearanceItemType.ViewItem, "[LoaiTienDo] <> ##Enum#CNTYv2.Module.BusinessObjects.LoaiTienDo,n#", Visibility = DevExpress.ExpressApp.Editors.ViewItemVisibility.Hide, Context ="Any")]
+        public string Nam
+        {
+            get => nam;
+            set => SetPropertyValue(nameof(Nam), ref nam, value);
+        }
+        [XafDisplayName("Từ năm - đến năm")]
+        //[Appearance("HideNamDenNam", AppearanceItemType.ViewItem, "[LoaiTienDo] <> ##Enum#CNTYv2.Module.BusinessObjects.LoaiTienDo,nn#", Visibility = DevExpress.ExpressApp.Editors.ViewItemVisibility.Hide ,Context = "Any")]
+        public string NamDenNam
+        {
+            get => namDenNam;
+            set => SetPropertyValue(nameof(NamDenNam), ref namDenNam, value);
+        }
+        [XafDisplayName("Tiến độ")]
+        //[Appearance("HideText", AppearanceItemType.ViewItem, "[LoaiTienDo] <> ##Enum#CNTYv2.Module.BusinessObjects.LoaiTienDo,t#", Visibility = DevExpress.ExpressApp.Editors.ViewItemVisibility.Hide, Context = "Any")]
+        public string TienDo
+        {
+            get => tienDo;
+            set => SetPropertyValue(nameof(TienDo), ref tienDo, value);
         }
         [XafDisplayName("Ghi chú")]
         public string GhiChu
@@ -57,4 +84,5 @@ namespace CNTYv2.Module.BusinessObjects
             set => SetPropertyValue(nameof(GhiChu), ref ghiChu, value);
         }
     }
+    
 }
