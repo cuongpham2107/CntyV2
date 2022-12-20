@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <BOModel Id="BOModel">
+    <Class Name="CNTYv2.Module.BusinessObjects.VBHD_LuatChanNuoi">
+      <AppearanceRules Id="AppearanceRules">
+        <AppearanceRule Id="HideNam" Criteria="[LoaiTienDo] &lt;&gt; ##Enum#CNTYv2.Module.BusinessObjects.Common+LoaiTienDo,n#" />
+      </AppearanceRules>
+    </Class>
+  </BOModel>
+  <Views Id="Views">
+    <DetailView Id="VBHD_LuatChanNuoi_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="VBHD_LuatChanNuoi">
+              <LayoutGroup Id="VBHD_LuatChanNuoi_col1" RelativeSize="50">
+                <LayoutItem Id="TenVanBan" RelativeSize="6.286836935166994" />
+                <LayoutItem Id="GhiChu" RelativeSize="93.71316306483301" />
+                <LayoutItem Id="LoaiTienDo" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="VBHD_LuatChanNuoi_col2" RelativeSize="50">
+                <LayoutItem Id="LoaiTienDo" ViewItem="LoaiTienDo" Index="0" RelativeSize="6.286836935166994" />
+                <LayoutItem Id="Nam" Index="1" RelativeSize="4.715127701375246" />
+                <LayoutItem Id="NamDenNam" Index="2" RelativeSize="4.715127701375246" />
+                <LayoutItem Id="TienDo" Index="3" RelativeSize="84.28290766208251" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

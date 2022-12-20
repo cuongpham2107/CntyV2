@@ -1,10 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Application Title="Quản lý Chăn Nuôi Thú Y" Description="Phần mềm Quản lý chăn nuôi thú y " Company="Sở Nông nghiệp và Phát triển Nông thôn tỉnh Bắc Giang" Copyright="KennaTech JSC.">
+<Application Title="Quản lý Chăn Nuôi Thú Y" Description="Phần mềm Quản lý chăn nuôi thú y " Company="Sở Nông nghiệp và Phát triển Nông thôn tỉnh Bắc Giang" Copyright="KennaTech JSC." PreferredLanguage="vi">
+  <ActionDesign>
+    <Actions>
+      <Action Id="DialogOK" ValidationContexts="ChangePassword" />
+    </Actions>
+  </ActionDesign>
   <BOModel>
+    <Class Name="CNTYv2.Module.BusinessObjects.GiayChungNhanChanNuoiDaCap">
+      <AppearanceRules>
+        <AppearanceRule Id="HetHanGCN" Criteria="[NgayHetHan] &lt; Now() Or [NgayHetHan] Is Null" />
+      </AppearanceRules>
+    </Class>
     <Class Name="DevExpress.Persistent.BaseImpl.PermissionPolicy.PermissionPolicyUser" Caption="Base User" />
   </BOModel>
   <NavigationItems>
     <Items>
+      <Item Id="Default">
+        <Items>
+          <Item Id="KyBaoCao_ListView" Removed="True" />
+        </Items>
+      </Item>
+      <Item Id="Reports">
+        <Items>
+          <Item Id="KyBaoCao_ListView" ViewId="KyBaoCao_ListView" ObjectKey="" IsNewNode="True" />
+        </Items>
+      </Item>
       <Item Id="State Machine" Removed="True" />
     </Items>
   </NavigationItems>
@@ -12,18 +32,382 @@
     <LayoutManagerOptions RequiredFieldMark="*" />
   </Options>
   <SchemaModules>
-    <SchemaModule Name="CloneObjectModule" Version="22.1.6.0" IsNewNode="True" />
-    <SchemaModule Name="SystemModule" Version="22.1.6.0" IsNewNode="True" />
+    <SchemaModule Name="CloneObjectModule" Version="22.2.3.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="22.2.3.0" IsNewNode="True" />
   </SchemaModules>
+  <Validation>
+    <Rules>
+      <PasswordStrengthCodeRule Id="PasswordStrengthCodeRule_ChangePasswordOnLogonParameters" SkipNullOrEmptyValues="True" />
+    </Rules>
+  </Validation>
   <Views>
     <ListView Id="ApplicationUser_ListView" Caption="Users" />
-    <ListView Id="TrangTraiChanNuoi_ListView" IsFooterVisible="False" MasterDetailMode="ListViewOnly">
+    <DetailView Id="BPXLMT_ChanNuoiNongHo_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="30.730050933786078">
+            <LayoutGroup Id="BPXLMT_ChanNuoiNongHo" RelativeSize="100">
+              <LayoutGroup Id="BPXLMT_ChanNuoiNongHo_col1" RelativeSize="49.853372434017594">
+                <LayoutItem Id="NoiDung" RelativeSize="22.535211267605632" />
+                <LayoutItem Id="CoQuanQuanLy" RelativeSize="16.901408450704224" />
+                <LayoutItem Id="NongHo_NongTrai" RelativeSize="16.901408450704224" />
+                <LayoutItem Id="GhiChu" ViewItem="GhiChu" Index="3" RelativeSize="43.66197183098591" IsNewNode="True" />
+                <LayoutItem Id="Trau" RelativeSize="51.80722891566265" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="BPXLMT_ChanNuoiNongHo_col2" RelativeSize="50.146627565982406">
+                <LayoutItem Id="Trau" ViewItem="Trau" Index="0" RelativeSize="22.535211267605632" IsNewNode="True" />
+                <LayoutItem Id="Bo" RelativeSize="16.901408450704224" Index="1" />
+                <LayoutItem Id="Lon" RelativeSize="16.901408450704224" Index="2" />
+                <LayoutItem Id="GiaCam" RelativeSize="16.901408450704224" Index="3" />
+                <LayoutItem Id="ChanNuoiKhac" RelativeSize="26.760563380281692" Index="4" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors" Caption="Ghi chú" RelativeSize="69.26994906621393">
+            <LayoutItem Id="GhiChu" Removed="True" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="BPXLMT_ChanNuoiNongHo_ListView" AllowUnlink="True" AllowNew="True" AllowEdit="True" AllowDelete="True" AllowLink="True" IsGroupPanelVisible="True" ShowAutoFilterRow="True" IsFooterVisible="True">
       <Columns>
-        <ColumnInfo Id="TenTrangTrai">
+        <ColumnInfo Id="CoQuanQuanLy" SortOrder="Ascending" GroupIndex="0" />
+        <ColumnInfo Id="Trau">
+          <Summary>
+            <ColumnSummaryItem Id="Summary0" SummaryType="Sum" IsNewNode="True" />
+          </Summary>
+        </ColumnInfo>
+        <ColumnInfo Id="Bo">
+          <Summary>
+            <ColumnSummaryItem Id="Summary0" SummaryType="Sum" IsNewNode="True" />
+          </Summary>
+        </ColumnInfo>
+        <ColumnInfo Id="Lon">
+          <Summary>
+            <ColumnSummaryItem Id="Summary0" SummaryType="Sum" IsNewNode="True" />
+          </Summary>
+        </ColumnInfo>
+        <ColumnInfo Id="GiaCam">
+          <Summary>
+            <ColumnSummaryItem Id="Summary0" SummaryType="Sum" IsNewNode="True" />
+          </Summary>
+        </ColumnInfo>
+        <ColumnInfo Id="ChanNuoiKhac">
+          <Summary>
+            <ColumnSummaryItem Id="Summary0" SummaryType="Sum" IsNewNode="True" />
+          </Summary>
+        </ColumnInfo>
+      </Columns>
+    </ListView>
+    <ListView Id="CoCauDanGiong_LookupListView" AllowEdit="True" />
+    <ListView Id="CoSoSanXuatThucAnChanNuoi_ListView" ShowAutoFilterRow="True" IsGroupPanelVisible="True" AllowNew="True">
+      <Columns>
+        <ColumnInfo Id="CoQuanQuanLy" SortOrder="Ascending" GroupIndex="0" />
+      </Columns>
+    </ListView>
+    <DetailView Id="GiayChungNhanChanNuoiDaCap_DetailView" FreezeLayout="False">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="30.677966101694917">
+            <LayoutGroup Id="GiayChungNhanChanNuoiDaCap" RelativeSize="100">
+              <LayoutGroup Id="GiayChungNhanChanNuoiDaCap_col1" RelativeSize="50">
+                <LayoutItem Id="TenTrangTrai" RelativeSize="22.535211267605632" />
+                <LayoutItem Id="TrangTraiChanNuoi" RelativeSize="16.901408450704224" />
+                <LayoutItem Id="CoQuanQuanLy" RelativeSize="16.901408450704224" />
+                <LayoutItem Id="SoLuongVatNuoi" ViewItem="SoLuongVatNuoi" Index="3" RelativeSize="43.66197183098591" IsNewNode="True" />
+                <LayoutItem Id="SoGiayChungNhan" RelativeSize="14.457831325301205" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="GiayChungNhanChanNuoiDaCap_col2" RelativeSize="50">
+                <LayoutItem Id="SoGiayChungNhan" ViewItem="SoGiayChungNhan" Index="0" RelativeSize="22.535211267605632" IsNewNode="True" />
+                <LayoutItem Id="NgayCap" RelativeSize="16.901408450704224" Index="1" />
+                <LayoutItem Id="NgayHetHan" RelativeSize="16.901408450704224" Index="2" />
+                <LayoutItem Id="FileGCN" RelativeSize="43.66197183098591" Index="3" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors" Caption="Số lượng vật nuôi" RelativeSize="69.32203389830508">
+            <LayoutItem Id="SoLuongVatNuoi" Removed="True" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="GiayChungNhanChanNuoiDaCap_ListView" AllowDelete="True" AllowEdit="True" AllowLink="True" AllowNew="True" AllowUnlink="True" AutoExpandAllGroups="False" ShowAutoFilterRow="True" IsGroupPanelVisible="True">
+      <Columns>
+        <ColumnInfo Id="CoQuanQuanLy" SortOrder="Ascending" GroupIndex="0" />
+      </Columns>
+    </ListView>
+    <DetailView Id="GiayChungNhanSanXuatThucAnCN_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="GiayChungNhanSanXuatThucAnCN" RelativeSize="100">
+              <LayoutGroup Id="GiayChungNhanSanXuatThucAnCN_col1" RelativeSize="49.88009592326139">
+                <LayoutItem Id="TieuDe" RelativeSize="6.093189964157706" />
+                <LayoutItem Id="CoSoSanXuatThucAnChanNuoi" RelativeSize="4.301075268817204" />
+                <LayoutItem Id="CoQuanQuanLy" RelativeSize="4.301075268817204" />
+                <LayoutItem Id="CongXuatThietKe" RelativeSize="85.30465949820788" />
+              </LayoutGroup>
+              <LayoutGroup Id="GiayChungNhanSanXuatThucAnCN_col2" RelativeSize="50.11990407673861">
+                <LayoutItem Id="SoGiayChungNhan" RelativeSize="6.093189964157706" />
+                <LayoutItem Id="NgayCap" RelativeSize="4.301075268817204" />
+                <LayoutItem Id="GhiChu" RelativeSize="4.301075268817204" />
+                <LayoutItem Id="FileDuLieu" RelativeSize="85.30465949820788" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="GiayChungNhanSanXuatThucAnCN_ListView" AllowUnlink="True" AllowNew="True" AllowEdit="True" AllowDelete="True" AllowLink="True" IsGroupPanelVisible="True" ShowAutoFilterRow="True">
+      <Columns>
+        <ColumnInfo Id="CoQuanQuanLy" SortOrder="Ascending" GroupIndex="0" />
+      </Columns>
+    </ListView>
+    <ListView Id="GiayChungNhanSanXuatThucAnCN_LookupListView" AllowEdit="True" />
+    <ListView Id="KyBaoCao_BPXLMT_ChanNuoiNongHos_ListView" ShowAutoFilterRow="True" IsGroupPanelVisible="True">
+      <Columns>
+        <ColumnInfo Id="NongHo_NongTrai" SortOrder="Descending" GroupIndex="0" />
+      </Columns>
+    </ListView>
+    <DetailView Id="KyBaoCao_DetailView">
+      <HiddenActions>
+        <ActionLink ActionId="New" IsNewNode="True" />
+      </HiddenActions>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="7.2796934865900385">
+            <LayoutGroup Id="KyBaoCao" RelativeSize="100" Direction="Horizontal">
+              <LayoutItem Id="TenKyBaoCao" Index="0" RelativeSize="42.40570846075433" />
+              <LayoutItem Id="Quy" ViewItem="Quy" Index="1" RelativeSize="27.217125382262996" IsNewNode="True" Removed="True" />
+              <LayoutItem Id="Nam" ViewItem="Nam" Index="2" RelativeSize="30.37716615698267" IsNewNode="True" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="92.72030651340997">
+            <LayoutGroup Id="TrangTraiChanNuois" RelativeSize="100">
+              <LayoutItem Id="TrangTraiChanNuois" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="CoSoSanXuatChanNuoiChanNuois" RelativeSize="100" Index="1">
+              <LayoutItem Id="CoSoSanXuatChanNuoiChanNuois" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="GiayChungNhanSanXuatThucAnCNs" RelativeSize="100" Index="2" Removed="True">
+              <LayoutItem Id="GiayChungNhanSanXuatThucAnCNs" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="QuanLyChatThaiChanNuois" RelativeSize="100" Index="2">
+              <LayoutItem Id="QuanLyChatThaiChanNuois" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="BPXLMT_ChanNuoiNongHos" RelativeSize="100" Index="3">
+              <LayoutItem Id="BPXLMT_ChanNuoiNongHos" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="PhongChongDichBenhDongVats" RelativeSize="100" Index="4">
+              <LayoutItem Id="PhongChongDichBenhDongVats" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="VungChanNuoiAnToanDichBenhs" RelativeSize="100" Index="5" Removed="True">
+              <LayoutItem Id="VungChanNuoiAnToanDichBenhs" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="GiayChungNhanChanNuoiDaCaps" RelativeSize="100" Removed="True">
+              <LayoutItem Id="GiayChungNhanChanNuoiDaCaps" RelativeSize="100" />
+            </LayoutGroup>
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="KyBaoCao_GiayChungNhanSanXuatThucAnCNs_ListView" AllowNew="True" AutoExpandAllGroups="True" IsGroupPanelVisible="True" ShowAutoFilterRow="True" />
+    <ListView Id="KyBaoCao_ListView" ShowAutoFilterRow="True" IsGroupPanelVisible="True" />
+    <ListView Id="KyBaoCao_TrangTraiChanNuois_ListView" AllowNew="True" />
+    <DetailView Id="PhongChongDichBenhDongVat_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="PhongChongDichBenhDongVat" RelativeSize="100">
+              <LayoutGroup Id="PhongChongDichBenhDongVat_col1" RelativeSize="49.88009592326139">
+                <LayoutItem Id="CoQuanQuanLy" RelativeSize="6.093189964157706" />
+                <LayoutItem Id="TenDichBenh" RelativeSize="4.301075268817204" />
+                <LayoutItem Id="LoaiVatNuoi" RelativeSize="4.301075268817204" />
+                <LayoutItem Id="NoiXayRaDichBenh" RelativeSize="4.301075268817204" />
+                <LayoutItem Id="NgayPhatHienCaBenhDau" RelativeSize="4.301075268817204" />
+                <LayoutItem Id="NgayXuLyCuoiCung" RelativeSize="76.70250896057348" />
+              </LayoutGroup>
+              <LayoutGroup Id="PhongChongDichBenhDongVat_col2" RelativeSize="50.11990407673861">
+                <LayoutItem Id="SoHoCoDich" RelativeSize="6.093189964157706" />
+                <LayoutItem Id="SoDongVatMacBenh" RelativeSize="4.301075268817204" />
+                <LayoutItem Id="SoDongVatChetHuy" RelativeSize="4.301075268817204" />
+                <LayoutItem Id="TrongLuongTieuHuy" RelativeSize="4.301075268817204" />
+                <LayoutItem Id="GhiChu" RelativeSize="81.00358422939068" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="PhongChongDichBenhDongVat_ListView" AllowUnlink="True" AllowNew="True" AllowEdit="True" AllowDelete="True" AllowLink="True" IsGroupPanelVisible="True" ShowAutoFilterRow="True">
+      <Columns>
+        <ColumnInfo Id="CoQuanQuanLy" SortOrder="Ascending" GroupIndex="0" />
+      </Columns>
+    </ListView>
+    <DetailView Id="QuanLyChatThaiChanNuoi_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="QuanLyChatThaiChanNuoi" RelativeSize="100">
+              <LayoutGroup Id="QuanLyChatThaiChanNuoi_col1" RelativeSize="49.88009592326139">
+                <LayoutItem Id="LH_ChanNuoi" RelativeSize="6.093189964157706" />
+                <LayoutItem Id="CoQuanQuanLy" RelativeSize="4.301075268817204" />
+                <LayoutItem Id="TongSoCoSo" RelativeSize="4.301075268817204" />
+                <LayoutItem Id="CoBaoCaoDanhGiaTacDongMoiTruong" RelativeSize="85.30465949820788" />
+              </LayoutGroup>
+              <LayoutGroup Id="QuanLyChatThaiChanNuoi_col2" RelativeSize="50.11990407673861">
+                <LayoutItem Id="CoGiayPhepMoiTruong_KeHoachBVMT" RelativeSize="6.093189964157706" />
+                <LayoutItem Id="CoBienPhapXuLyChatThaiChanNuoi" RelativeSize="4.301075268817204" />
+                <LayoutItem Id="KhongCoBienPhap" RelativeSize="89.60573476702508" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="QuanLyChatThaiChanNuoi_ListView" IsGroupPanelVisible="True" ShowAutoFilterRow="True" AllowNew="True" AllowLink="True">
+      <Columns>
+        <ColumnInfo Id="CoQuanQuanLy" SortOrder="Ascending" GroupIndex="0" />
+      </Columns>
+    </ListView>
+    <DetailView Id="TrangTraiChanNuoi_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="28.68988391376451">
+            <TabbedGroup Id="Item1" CaptionLocation="Top" Index="0" RelativeSize="100" IsNewNode="True">
+              <LayoutGroup Id="TrangTraiChanNuoi" ShowCaption="True" Direction="Horizontal" Index="0" RelativeSize="100" IsNewNode="True">
+                <LayoutGroup Id="TrangTraiChanNuoi_col1" ShowCaption="False" Index="0" RelativeSize="49.40047961630695" IsNewNode="True">
+                  <LayoutItem Id="TenTrangTrai" ViewItem="TenTrangTrai" Index="0" RelativeSize="27.868852459016395" IsNewNode="True" />
+                  <LayoutItem Id="LoaiHinhSoHuu" ViewItem="LoaiHinhSoHuu" Index="1" RelativeSize="19.672131147540984" IsNewNode="True" />
+                  <LayoutItem Id="DiaChiSoDienThoai" ViewItem="DiaChiSoDienThoai" Index="2" RelativeSize="52.459016393442624" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="TrangTraiChanNuoi_col2" ShowCaption="False" Index="1" RelativeSize="50.59952038369305" IsNewNode="True">
+                  <LayoutItem Id="PhanLoaiCoSoChanNuoi" ViewItem="PhanLoaiCoSoChanNuoi" Index="0" RelativeSize="27.868852459016395" IsNewNode="True" />
+                  <LayoutItem Id="CoQuanQuanLy" ViewItem="CoQuanQuanLy" Index="1" RelativeSize="19.672131147540984" IsNewNode="True" />
+                  <LayoutItem Id="GhiChu" ViewItem="GhiChu" Index="2" RelativeSize="52.459016393442624" IsNewNode="True" />
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutGroup Id="TrangTrai_VatNuois" ShowCaption="True" Index="1" RelativeSize="100" IsNewNode="True">
+                <LayoutItem Id="TrangTrai_VatNuois" ViewItem="TrangTrai_VatNuois" Index="0" RelativeSize="100" IsNewNode="True" />
+              </LayoutGroup>
+            </TabbedGroup>
+            <LayoutGroup Id="TrangTraiChanNuoi" RelativeSize="54.51263537906137" Index="0" Removed="True">
+              <LayoutGroup Id="TrangTraiChanNuoi_col1" RelativeSize="49.447513812154696">
+                <LayoutItem Id="DiaChiSoDienThoai" RelativeSize="52.54237288135593" />
+                <LayoutItem Id="LoaiHinhSoHuu" RelativeSize="20.338983050847457" />
+                <LayoutItem Id="TenTrangTrai" RelativeSize="27.11864406779661" />
+              </LayoutGroup>
+              <LayoutGroup Id="TrangTraiChanNuoi_col2" RelativeSize="50.552486187845304">
+                <LayoutItem Id="PhanLoaiCoSoChanNuoi" RelativeSize="27.11864406779661" Index="0" />
+                <LayoutItem Id="CoQuanQuanLy" ViewItem="CoQuanQuanLy" Index="1" RelativeSize="20.338983050847457" IsNewNode="True" Removed="True" />
+                <LayoutItem Id="GhiChu" Index="2" RelativeSize="52.54237288135593" ViewItem="GhiChu" IsNewNode="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" Index="1" RelativeSize="71.3101160862355">
+            <LayoutGroup Id="GiayChungNhanChanNuoiDaCaps" Index="0" RelativeSize="100">
+              <LayoutItem Id="GiayChungNhanChanNuoiDaCaps" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="VungChanNuoiAnToanDichBenhs" Index="1" RelativeSize="100">
+              <LayoutItem Id="VungChanNuoiAnToanDichBenhs" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="TrangTrai_VatNuois" Removed="True" />
+          </TabbedGroup>
+          <LayoutGroup Id="SizeableEditors" RelativeSize="52.10843373493976" Removed="True">
+            <LayoutItem Id="GhiChu" Removed="True" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="TrangTraiChanNuoi_ListView" IsFooterVisible="True" MasterDetailMode="ListViewOnly" AllowNew="True" AllowEdit="True" AllowDelete="True" AllowLink="True" AllowUnlink="True" AutoExpandAllGroups="False" IsGroupPanelVisible="True" ShowAutoFilterRow="True">
+      <Columns>
+        <ColumnInfo Id="TenTrangTrai" SortIndex="-1" SortOrder="None">
           <Summary>
             <ColumnSummaryItem Id="Tổng" SummaryType="Count" IsNewNode="True" />
           </Summary>
         </ColumnInfo>
+        <ColumnInfo Id="LoaiHinhSoHuu" SortIndex="-1" SortOrder="None" />
+        <ColumnInfo Id="DiaChiSoDienThoai" SortIndex="-1" SortOrder="None" />
+        <ColumnInfo Id="CoQuanQuanLy" Index="3" SortOrder="Descending" GroupIndex="0" />
+        <ColumnInfo Id="PhanLoaiCoSoChanNuoi" Index="4" />
+        <ColumnInfo Id="GhiChu" Index="5" />
+        <ColumnInfo Id="Lock" Index="6" />
+        <ColumnInfo Id="Close" Index="7" />
+      </Columns>
+    </ListView>
+    <DetailView Id="VatNuoi_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="15.60798548094374">
+            <LayoutGroup Id="VatNuoi" RelativeSize="100">
+              <LayoutItem Id="TenLoaiVatNuoi" RelativeSize="37.2093023255814" />
+              <LayoutItem Id="LoaiVatNuoi" RelativeSize="27.906976744186046" />
+              <LayoutItem Id="MoTa" RelativeSize="34.883720930232556" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="84.39201451905626">
+            <LayoutGroup Id="LoaiDanGiongs" Index="0" RelativeSize="100">
+              <LayoutItem Id="LoaiDanGiongs" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="TrangTrai_VatNuois" Removed="True" />
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="VatNuoi_TrangTrai_VatNuois_ListView" MasterDetailMode="ListViewOnly" />
+    <DetailView Id="VBHD_LuatChanNuoi_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="6.929133858267717">
+            <LayoutGroup Id="VBHD_LuatChanNuoi" RelativeSize="100">
+              <LayoutItem Id="FileData" Removed="True" />
+              <LayoutItem Id="GhiChu" RelativeSize="100" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors" RelativeSize="93.07086614173228">
+            <LayoutItem Id="TenVanBan" RelativeSize="42.30118443316413" />
+            <LayoutItem Id="TienDoThucHien" RelativeSize="47.88494077834179" />
+            <LayoutItem Id="GhiChu" ViewItem="GhiChu" Index="2" RelativeSize="4.060913705583756" IsNewNode="True" />
+            <LayoutItem Id="FileData" ViewItem="FileData" Index="3" RelativeSize="5.752961082910321" IsNewNode="True" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="VBHD_LuatChanNuoi_ListView">
+      <Columns>
+        <ColumnInfo Id="TienDoThucHien" Index="1" />
+        <ColumnInfo Id="GhiChu" Index="2" />
+        <ColumnInfo Id="FileData" Index="3" />
+      </Columns>
+    </ListView>
+    <DetailView Id="VungChanNuoiAnToanDichBenh_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="VungChanNuoiAnToanDichBenh" RelativeSize="100">
+              <LayoutGroup Id="VungChanNuoiAnToanDichBenh_col1" RelativeSize="49.93006993006993">
+                <LayoutItem Id="TenVung_CoSo" RelativeSize="6.639004149377594" />
+                <LayoutItem Id="CoQuanQuanLy" RelativeSize="4.979253112033195" />
+                <LayoutItem Id="DiaChi" RelativeSize="4.979253112033195" />
+                <LayoutItem Id="DoiTuongVatNuoi" RelativeSize="4.979253112033195" />
+                <LayoutItem Id="QuyMoChanNuoi" RelativeSize="4.979253112033195" />
+                <LayoutItem Id="LoaiBenhDuocChungNhanAnToan" RelativeSize="73.44398340248962" />
+              </LayoutGroup>
+              <LayoutGroup Id="VungChanNuoiAnToanDichBenh_col2" RelativeSize="50.06993006993007">
+                <LayoutItem Id="SoGiayChungNhan" RelativeSize="6.639004149377594" />
+                <LayoutItem Id="NgayCapGiayChungNhan" RelativeSize="4.979253112033195" />
+                <LayoutItem Id="NgayHetHanGCN" RelativeSize="4.979253112033195" />
+                <LayoutItem Id="GhiChu" RelativeSize="4.979253112033195" />
+                <LayoutItem Id="FileDuLieu" RelativeSize="78.42323651452283" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="VungChanNuoiAnToanDichBenh_ListView" AllowUnlink="True" AllowNew="True" AllowEdit="True" AllowDelete="True" AllowLink="True" IsGroupPanelVisible="True" ShowAutoFilterRow="True">
+      <Columns>
+        <ColumnInfo Id="CoQuanQuanLy" SortOrder="Ascending" GroupIndex="0" />
       </Columns>
     </ListView>
   </Views>

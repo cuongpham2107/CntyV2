@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <DetailView Id="TrangTraiChanNuoi_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="TrangTraiChanNuoi">
+              <LayoutGroup Id="TrangTraiChanNuoi_col1">
+                <LayoutItem Id="GiayChungNhanChanNuoiDaCap" RelativeSize="20" />
+              </LayoutGroup>
+              <LayoutGroup Id="TrangTraiChanNuoi_col2">
+                <LayoutItem Id="GhiChu" SizeConstraintsType="Custom" MinSize="378, 32" MaxSize="378, 32" RelativeSize="35" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

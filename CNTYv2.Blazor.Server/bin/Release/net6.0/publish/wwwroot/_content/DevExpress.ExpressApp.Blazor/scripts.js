@@ -104,9 +104,9 @@
         if (toolbarItem) {
             let itemIsHidden = getComputedStyle(toolbarItem).display === 'none';
             if (itemIsHidden) {
-                let toolbar = toolbarItem.closest('.dxbs-toolbar');
-                let ag = toolbar.querySelector('.dxbs-ta-ag');
-                let ellipsisAttribute = ag.attributes['data-dxtoolbar-ellipsis-id'];
+                let toolbar = toolbarItem.closest('.dxbl-toolbar');
+                let ag = toolbar.querySelector('.dxbl-toolbar-btn-ellipsis');
+                let ellipsisAttribute = ag.attributes['data-dxtoolbar-ellipsis-dropdown-id'];
                 return '[' + ellipsisAttribute.name + '="' + ellipsisAttribute.value + '"]';
             }
         }
@@ -163,7 +163,8 @@
         window.xaf.loadingIndicator.show();
         return false;
     });
-    addChildEventListener(rootElement, "click", "[data-xaf-action]", () => {
+    // used for SingleChoiceActions
+    addChildEventListener(rootElement, "click", "[data-xaf-action] > button:first-child", () => {
         window.xaf.loadingIndicator.show();
         return false;
     });
@@ -197,8 +198,8 @@
     }
     function onBeforeRenderReportDesigner(s, e) {
         if (IsNewReport) {
-            s.RunWizard("DesignInReportWizard");
             var subscription = s.GetDesignerModel().navigateByReports.currentTab.subscribe((newValue) => {
+                s.RunWizard("DesignInReportWizard");
                 subscription.dispose();
                 newValue.url("");
             });
@@ -372,9 +373,10 @@
                 }
             }
         },
-        executeParametrizedAction(buttonElement) {
+        executeParametrizedAction(buttonElement, input) {
             buttonElement.focus();
             buttonElement.click();
+            input.focus();
         },
         toogleDetailedErrorDescription() {
             var detailedError = document.getElementById("error-detailed");
@@ -383,15 +385,16 @@
                 detailedError.classList.toggle("show");
             }
         },
-        bindButtonToContainer(buttonElement) {
-            var input = buttonElement ? buttonElement.closest(".parametrized-action-wrapper").querySelector("input") : null;
+        bindButtonToContainer(id) {
+            let buttonElement = document.getElementById(id);
+            let input = buttonElement.closest('.parametrized-action-wrapper').querySelector("input");
             if (input) {
                 input.addEventListener("keypress",
                     function (args) {
                         if (args.key === 'Enter') {
                             input.blur();
                             setTimeout(function () {
-                                xaf.executeParametrizedAction(buttonElement);
+                                xaf.executeParametrizedAction(buttonElement, input);
                             });
                         }
                     });
@@ -585,8 +588,8 @@
                 xaf.closeOutsideClickController.show(targetId, xaf.imageMobile.shadow);
             }
         },
-        image(menuElementId, mainElementId) {
-            var isMobile = xaf.device.isMobile();
+        image(menuElementId, mainElementId, forceMobileLayout) {
+            var isMobile = xaf.device.isMobile() || forceMobileLayout === "True";
             if (isMobile) {
                 var targetId = mainElementId;
                 var shadow = xaf.imageMobile.shadow;
@@ -763,7 +766,7 @@
 (function () {
     document.addEventListener("keypress", function (e) {
         if (e.target && e.target.tagName.toLowerCase() === 'input' && e.keyCode === 13 && !xaf.loadingIndicator.isShowing()) {
-            let primaryItem = document.querySelector('.logon-toolbar .dxbs-toolbar .dxbs-toolbar-btn.btn-primary');
+            let primaryItem = document.querySelector('.logon-toolbar .dxbl-toolbar .dxbl-btn.dxbl-btn-primary');
             if (primaryItem) {
                 e.target.blur();
                 setTimeout(() => { primaryItem.click(); });
@@ -801,4 +804,51 @@
         attachWindowEvent("beforeunload", CustomOnBeforeUnload);
     }
     xaf.ConfirmUnsavedChangesController = new createConfirmUnsavedChangesController();
+})();
+
+(function () {
+    // helps process clicks on <a> elements in the navigation component's markup
+    class XafNavigationClickHelper extends HTMLElement {
+        constructor() {
+            super();
+            this.isInitialized = false;
+        }
+        connectedCallback() {
+            if (!this.isInitialized) {
+                this.isInitialized = true;
+                // prevents regular clicks (e.g. left mouse button) on a link
+                this.addEventListener("click", ev => {
+                    const isLinkClicked = ev.composedPath().find(el => el.tagName?.toLowerCase() === "a");
+                    if (isLinkClicked) {
+                        ev.preventDefault();
+                    }
+                });
+                // allows ctrl-clicks on a link
+                this.addEventListener("click", ev => {
+                    if (ev.ctrlKey) {
+                        ev.stopImmediatePropagation();
+                        const isFakeLinkClicked = ev.composedPath().find(el =>
+                            el.tagName?.toLowerCase() === "a"
+                            && el.getAttribute("href") === "#");
+                        if (isFakeLinkClicked) {
+                            ev.preventDefault();
+                        } else {
+                            let auxclickEvent = new MouseEvent("auxclick", ev);
+                            this.dispatchEvent(auxclickEvent);
+                        }
+                    }
+                }, { capture: true });
+                // prevents auxiliary clicks (e.g. middle mouse button) on <a href="#">-like elements
+                this.addEventListener("auxclick", ev => {
+                    const isFakeLinkClicked = ev.composedPath().find(el =>
+                        el.tagName?.toLowerCase() === "a"
+                        && el.getAttribute("href") === "#");
+                    if (isFakeLinkClicked) {
+                        ev.preventDefault();
+                    }
+                });
+            }
+        }
+    }
+    customElements.define("xaf-navigation-click-helper", XafNavigationClickHelper);
 })();

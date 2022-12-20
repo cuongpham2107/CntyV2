@@ -2,19 +2,124 @@
 <Application>
   <ActionDesign>
     <Actions>
+      <Action Id="BPXLMT_ChanNuoiNongHo.CloseAction" ToolTip="Đóng" ShortCaption="Đóng" Caption="Đóng" />
+      <Action Id="BPXLMT_ChanNuoiNongHo.CloseActionUndo" ToolTip="Mở" ShortCaption="Mở" Caption="Mở" />
+      <Action Id="BPXLMT_ChanNuoiNongHo.LockAction" ToolTip="Khoá" ShortCaption="Khoá" Caption="Khoá" />
+      <Action Id="BPXLMT_ChanNuoiNongHo.LockActionUndo" Caption="Mở khoá" />
+      <Action Id="CoSoSanXuatThucAnChanNuoi.CloseAction" ToolTip="Đóng" ShortCaption="Đóng" Caption="Đóng" />
+      <Action Id="CoSoSanXuatThucAnChanNuoi.CloseActionUndo" ToolTip="Mở" ShortCaption="Mở" Caption="Mở" />
+      <Action Id="CoSoSanXuatThucAnChanNuoi.LockAction" ToolTip="Khoá" ShortCaption="Khoá" Caption="Khoá" />
+      <Action Id="CoSoSanXuatThucAnChanNuoi.LockActionUndo" Caption="Mở khoá" />
       <Action Id="Delete" Caption="Xoá" />
       <Action Id="DialogClose" Caption="Đóng" />
+      <Action Id="GiayChungNhanChanNuoiDaCap.CloseAction" ToolTip="Đóng" ShortCaption="Đóng" Caption="Đóng" />
+      <Action Id="GiayChungNhanChanNuoiDaCap.CloseActionUndo" ToolTip="Mở" ShortCaption="Mở" Caption="Mở" />
+      <Action Id="GiayChungNhanChanNuoiDaCap.LockAction" ToolTip="Khoá" ShortCaption="Khoá" Caption="Khoá" />
+      <Action Id="GiayChungNhanChanNuoiDaCap.LockActionUndo" Caption="Mở khoá" />
+      <Action Id="GiayChungNhanSanXuatThucAnCN.CloseAction" ToolTip="Đóng" ShortCaption="Đóng" Caption="Đóng" />
+      <Action Id="GiayChungNhanSanXuatThucAnCN.CloseActionUndo" ToolTip="Mở" ShortCaption="Mở" Caption="Mở" />
+      <Action Id="GiayChungNhanSanXuatThucAnCN.LockAction" ToolTip="Khoá" ShortCaption="khoKhoá" Caption="Khoá" />
+      <Action Id="GiayChungNhanSanXuatThucAnCN.LockActionUndo" Caption="Mở khoá" />
+      <Action Id="ListViewShowObject" ToolTip="Mở" ShortCaption="Mở" Caption="Mở" />
+      <Action Id="Logoff" Caption="Đăng xuất" />
+      <Action Id="Logon" Caption="Đăng nhập" />
       <Action Id="New" Caption="Tạo mới" />
+      <Action Id="PhongChongDichBenhDongVat.CloseAction" ToolTip="Đóng" ShortCaption="Đóng" Caption="Đóng" />
+      <Action Id="PhongChongDichBenhDongVat.CloseActionUndo" ToolTip="Mở" ShortCaption="Mở" Caption="Mở" />
+      <Action Id="PhongChongDichBenhDongVat.LockAction" ToolTip="Khoá" ShortCaption="Khoá" Caption="Khoá" />
+      <Action Id="PhongChongDichBenhDongVat.LockActionUndo" Caption="Mở khoá" />
+      <Action Id="QuanLyChatThaiChanNuoi.CloseAction" ToolTip="Đóng" ShortCaption="Đóng" Caption="Đóng" />
+      <Action Id="QuanLyChatThaiChanNuoi.CloseActionUndo" ToolTip="Mở" ShortCaption="Mở" Caption="Mở" />
+      <Action Id="QuanLyChatThaiChanNuoi.LockAction" ToolTip="Khoá" ShortCaption="Khoá" Caption="khKhoáoá" />
+      <Action Id="QuanLyChatThaiChanNuoi.LockActionUndo" Caption="Mở khoá" />
       <Action Id="Refresh" Caption="Tải lại" />
       <Action Id="RefreshAction" Caption="Tải lại" />
       <Action Id="ReportViewerDialogControllerV2_Close" Caption="Đóng" />
       <Action Id="Save" Caption="Lưu" />
+      <Action Id="ShowInReportV2" Caption="🖨 Xuất báo cáo" />
+      <Action Id="TrangTraiChanNuoi.CloseAction" ToolTip="Đóng" ShortCaption="Đóng" Caption="Đóng" />
+      <Action Id="TrangTraiChanNuoi.CloseActionUndo" ToolTip="Mở" ShortCaption="Mở" Caption="Mở" />
+      <Action Id="TrangTraiChanNuoi.LockAction" ToolTip="Khoá" ShortCaption="Khoá" Caption="Khoá" />
+      <Action Id="TrangTraiChanNuoi.LockActionUndo" Caption="Mở khoá" />
+      <Action Id="VungChanNuoiAnToanDichBenh.CloseAction" ToolTip="Đóng" ShortCaption="Đóng" Caption="Đóng" />
+      <Action Id="VungChanNuoiAnToanDichBenh.CloseActionUndo" ToolTip="Mở" ShortCaption="Mở" Caption="Mở" />
+      <Action Id="VungChanNuoiAnToanDichBenh.LockAction" ToolTip="Khoá" ShortCaption="Khoá" Caption="Khoá" />
+      <Action Id="VungChanNuoiAnToanDichBenh.LockActionUndo" Caption="Mở khoá" />
     </Actions>
     <ActionToContainerMapping>
       <ActionContainer Id="Save" Caption="Lưu" />
     </ActionToContainerMapping>
   </ActionDesign>
   <BOModel>
+    <Class Name="CNTYv2.Module.BusinessObjects.BPXLMT_ChanNuoiNongHo">
+      <OwnMembers>
+        <Member Name="Close" Caption="Đóng" />
+        <Member Name="Lock" Caption="Khoá" />
+      </OwnMembers>
+    </Class>
+    <Class Name="CNTYv2.Module.BusinessObjects.CoSoSanXuatThucAnChanNuoi">
+      <OwnMembers>
+        <Member Name="Close" Caption="Đóng" />
+        <Member Name="Lock" Caption="Khoá" />
+      </OwnMembers>
+    </Class>
+    <Class Name="CNTYv2.Module.BusinessObjects.GiayChungNhanChanNuoiDaCap">
+      <OwnMembers>
+        <Member Name="Close" Caption="Đóng" />
+        <Member Name="Lock" Caption="Khoá" />
+      </OwnMembers>
+    </Class>
+    <Class Name="CNTYv2.Module.BusinessObjects.GiayChungNhanSanXuatThucAnCN">
+      <OwnMembers>
+        <Member Name="Close" Caption="Đóng" />
+        <Member Name="Lock" Caption="Khoá" />
+      </OwnMembers>
+    </Class>
+    <Class Name="CNTYv2.Module.BusinessObjects.PhongChongDichBenhDongVat">
+      <OwnMembers>
+        <Member Name="Close" Caption="Đóng" />
+        <Member Name="Lock" Caption="Khoá" />
+      </OwnMembers>
+    </Class>
+    <Class Name="CNTYv2.Module.BusinessObjects.QuanLyChatThaiChanNuoi">
+      <OwnMembers>
+        <Member Name="Close" Caption="Đóng" />
+        <Member Name="Lock" Caption="Khoá" />
+      </OwnMembers>
+    </Class>
+    <Class Name="CNTYv2.Module.BusinessObjects.TrangTraiChanNuoi">
+      <OwnMembers>
+        <Member Name="Close" Caption="Đóng" />
+        <Member Name="Lock" Caption="Khoá" />
+      </OwnMembers>
+    </Class>
+    <Class Name="CNTYv2.Module.BusinessObjects.VungChanNuoiAnToanDichBenh">
+      <OwnMembers>
+        <Member Name="Close" Caption="Đóng" />
+        <Member Name="Lock" Caption="Khoá" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.ExpressApp.Security.AuthenticationStandardLogonParameters">
+      <OwnMembers>
+        <Member Name="Password" Caption="Mật khẩu" />
+        <Member Name="UserName" Caption="Tài khoản" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.ExpressApp.Security.ResetPasswordParameters">
+      <OwnMembers>
+        <Member Name="Password" Caption="Mật khẩu" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.Persistent.BaseImpl.AuditDataItemPersistent">
+      <OwnMembers>
+        <Member Name="UserName" Caption="Tài khoản" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.Persistent.BaseImpl.ModelDifference">
+      <OwnMembers>
+        <Member Name="UserName" Caption="Tài khoản" />
+      </OwnMembers>
+    </Class>
     <Class Name="DevExpress.Persistent.BaseImpl.PermissionPolicy.PermissionPolicyObjectPermissionsObject">
       <OwnMembers>
         <Member Name="DeleteState" Caption="Xoá" />
@@ -23,6 +128,11 @@
     <Class Name="DevExpress.Persistent.BaseImpl.PermissionPolicy.PermissionPolicyTypePermissionObject">
       <OwnMembers>
         <Member Name="DeleteState" Caption="Xoá" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.Persistent.BaseImpl.PermissionPolicy.PermissionPolicyUser">
+      <OwnMembers>
+        <Member Name="UserName" Caption="Tài khoản" />
       </OwnMembers>
     </Class>
   </BOModel>
@@ -48,7 +158,7 @@
   </Localization>
   <NavigationItems>
     <Items>
-      <Item Id="Quản lý chất thải" Caption="🏭 Quản lý chất thải" />
+      <Item Id="Default" Caption="⚙ Cấu hình" />
       <Item Id="Quản lý đàn giống" Caption="🐖 Quản lý đàn giống" />
       <Item Id="Quản lý thức ăn chăn nuôi" Caption="🌾 Quản lý thức ăn chăn nuôi" />
       <Item Id="Quản lý trang trại" Caption="🏡 Quản lý trang trại" />
@@ -65,4 +175,279 @@
       <ValidationContext Id="Save" Caption="Lưu" />
     </Contexts>
   </Validation>
+  <Views>
+    <DetailView Id="AuthenticationStandardLogonParameters_Blazor_DetailView" Caption="Đăng nhập">
+      <Items>
+        <StaticText Id="LogonText" Text="Nhập tài khoản và mật khẩu của bạn ở dưới" />
+      </Items>
+    </DetailView>
+    <DetailView Id="AuthenticationStandardLogonParameters_DetailView" Caption="Đăng nhập" />
+    <DetailView Id="BPXLMT_ChanNuoiNongHo_DetailView">
+      <Items>
+        <PropertyEditor Id="Close" Caption="Đóng" />
+        <PropertyEditor Id="Lock" Caption="Khoá" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="BPXLMT_ChanNuoiNongHo" Caption="Biện pháp xử lý môi trường trong chăn nuôi" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="BPXLMT_ChanNuoiNongHo_ListView">
+      <Columns>
+        <ColumnInfo Id="Lock" Caption="Khoá" />
+        <ColumnInfo Id="Close" Caption="Đóng" />
+      </Columns>
+    </ListView>
+    <ListView Id="CoQuanQuanLy_BPXLMT_ChanNuoiNongHos_ListView">
+      <Columns>
+        <ColumnInfo Id="Lock" Caption="Khoá" />
+        <ColumnInfo Id="Close" Caption="Đóng" />
+      </Columns>
+    </ListView>
+    <ListView Id="CoQuanQuanLy_CoSoSanXuatThucAnChanNuois_ListView">
+      <Columns>
+        <ColumnInfo Id="Lock" Caption="Khoá" />
+        <ColumnInfo Id="Close" Caption="Đóng" />
+      </Columns>
+    </ListView>
+    <ListView Id="CoQuanQuanLy_PhongChongDichBenhDongVats_ListView">
+      <Columns>
+        <ColumnInfo Id="Lock" Caption="Khoá" />
+        <ColumnInfo Id="Close" Caption="Đóng" />
+      </Columns>
+    </ListView>
+    <ListView Id="CoQuanQuanLy_QuanLyChatThaiChanNuois_ListView">
+      <Columns>
+        <ColumnInfo Id="Lock" Caption="Khoá" />
+        <ColumnInfo Id="Close" Caption="Đóng" />
+      </Columns>
+    </ListView>
+    <ListView Id="CoQuanQuanLy_TrangTraiChanNuois_ListView">
+      <Columns>
+        <ColumnInfo Id="Lock" Caption="Khoá" />
+        <ColumnInfo Id="Close" Caption="Đóng" />
+      </Columns>
+    </ListView>
+    <DetailView Id="CoSoSanXuatThucAnChanNuoi_DetailView">
+      <Items>
+        <PropertyEditor Id="Close" Caption="Đóng" />
+        <PropertyEditor Id="Lock" Caption="Khoá" />
+      </Items>
+    </DetailView>
+    <ListView Id="CoSoSanXuatThucAnChanNuoi_GiayChungNhanSanXuatThucAnCNs_ListView">
+      <Columns>
+        <ColumnInfo Id="Lock" Caption="Khoá" />
+        <ColumnInfo Id="Close" Caption="Đóng" />
+      </Columns>
+    </ListView>
+    <ListView Id="CoSoSanXuatThucAnChanNuoi_ListView">
+      <Columns>
+        <ColumnInfo Id="Lock" Caption="Khoá" />
+        <ColumnInfo Id="Close" Caption="Đóng" />
+      </Columns>
+    </ListView>
+    <DetailView Id="GiayChungNhanChanNuoiDaCap_DetailView">
+      <Items>
+        <PropertyEditor Id="Close" Caption="Đóng" />
+        <PropertyEditor Id="Lock" Caption="Khoá" />
+      </Items>
+    </DetailView>
+    <ListView Id="GiayChungNhanChanNuoiDaCap_ListView">
+      <Columns>
+        <ColumnInfo Id="Lock" Caption="Khoá" />
+        <ColumnInfo Id="Close" Caption="Đóng" />
+      </Columns>
+    </ListView>
+    <DetailView Id="GiayChungNhanSanXuatThucAnCN_DetailView">
+      <Items>
+        <PropertyEditor Id="Close" Caption="Đóng" />
+        <PropertyEditor Id="Lock" Caption="Khoá" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="GiayChungNhanSanXuatThucAnCN" Caption="Giấy chứng nhận thức ăn chăn nuôi" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="GiayChungNhanSanXuatThucAnCN_ListView">
+      <Columns>
+        <ColumnInfo Id="Lock" Caption="Khoá" />
+        <ColumnInfo Id="Close" Caption="Đóng" />
+      </Columns>
+    </ListView>
+    <ListView Id="KyBaoCao_BPXLMT_ChanNuoiNongHos_ListView">
+      <Columns>
+        <ColumnInfo Id="Lock" Caption="Khoá" />
+        <ColumnInfo Id="Close" Caption="Đóng" />
+      </Columns>
+    </ListView>
+    <ListView Id="KyBaoCao_CoSoSanXuatChanNuoiChanNuois_ListView">
+      <Columns>
+        <ColumnInfo Id="Lock" Caption="Khoá" />
+        <ColumnInfo Id="Close" Caption="Đóng" />
+      </Columns>
+    </ListView>
+    <DetailView Id="KyBaoCao_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="KyBaoCao" Caption="KyBaoCao" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="KyBaoCao_GiayChungNhanChanNuoiDaCaps_ListView">
+      <Columns>
+        <ColumnInfo Id="Lock" Caption="Khoá" />
+        <ColumnInfo Id="Close" Caption="Đóng" />
+      </Columns>
+    </ListView>
+    <ListView Id="KyBaoCao_GiayChungNhanSanXuatThucAnCNs_ListView">
+      <Columns>
+        <ColumnInfo Id="Lock" Caption="Khoá" />
+        <ColumnInfo Id="Close" Caption="Đóng" />
+      </Columns>
+    </ListView>
+    <ListView Id="KyBaoCao_PhongChongDichBenhDongVats_ListView">
+      <Columns>
+        <ColumnInfo Id="Lock" Caption="Khoá" />
+        <ColumnInfo Id="Close" Caption="Đóng" />
+      </Columns>
+    </ListView>
+    <ListView Id="KyBaoCao_QuanLyChatThaiChanNuois_ListView">
+      <Columns>
+        <ColumnInfo Id="Lock" Caption="Khoá" />
+        <ColumnInfo Id="Close" Caption="Đóng" />
+      </Columns>
+    </ListView>
+    <ListView Id="KyBaoCao_TrangTraiChanNuois_ListView">
+      <Columns>
+        <ColumnInfo Id="Lock" Caption="Khoá" />
+        <ColumnInfo Id="Close" Caption="Đóng" />
+      </Columns>
+    </ListView>
+    <ListView Id="KyBaoCao_VungChanNuoiAnToanDichBenhs_ListView">
+      <Columns>
+        <ColumnInfo Id="Lock" Caption="Khoá" />
+        <ColumnInfo Id="Close" Caption="Đóng" />
+      </Columns>
+    </ListView>
+    <ListView Id="PhanLoaiCoSoChanNuoi_TrangTraiChanNuois_ListView">
+      <Columns>
+        <ColumnInfo Id="Lock" Caption="Khoá" />
+        <ColumnInfo Id="Close" Caption="Đóng" />
+      </Columns>
+    </ListView>
+    <DetailView Id="PhongChongDichBenhDongVat_DetailView">
+      <Items>
+        <PropertyEditor Id="Close" Caption="Đóng" />
+        <PropertyEditor Id="Lock" Caption="Khoá" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="PhongChongDichBenhDongVat" Caption="Phòng chống dịch bệnh động vật" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="PhongChongDichBenhDongVat_ListView">
+      <Columns>
+        <ColumnInfo Id="Lock" Caption="Khoá" />
+        <ColumnInfo Id="Close" Caption="Đóng" />
+      </Columns>
+    </ListView>
+    <DetailView Id="QuanLyChatThaiChanNuoi_DetailView">
+      <Items>
+        <PropertyEditor Id="Close" Caption="Đóng" />
+        <PropertyEditor Id="Lock" Caption="Khoá" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="QuanLyChatThaiChanNuoi" Caption="Quản lý chất thải chăn nuôi" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="QuanLyChatThaiChanNuoi_ListView">
+      <Columns>
+        <ColumnInfo Id="Lock" Caption="Khoá" />
+        <ColumnInfo Id="Close" Caption="Đóng" />
+      </Columns>
+    </ListView>
+    <ListView Id="QuanLyChatThaiChanNuoi_LookupListView">
+      <Columns>
+        <ColumnInfo Id="Lock" Caption="Khoá" />
+        <ColumnInfo Id="Close" Caption="Đóng" />
+      </Columns>
+    </ListView>
+    <DetailView Id="TrangTraiChanNuoi_DetailView">
+      <Items>
+        <PropertyEditor Id="Close" Caption="Đóng" />
+        <PropertyEditor Id="Lock" Caption="Khoá" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <TabbedGroup Id="Item1">
+              <LayoutGroup Id="TrangTraiChanNuoi" Caption="Trang trại chăn nuôi" />
+            </TabbedGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors" Caption="Ghi chú" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="TrangTraiChanNuoi_GiayChungNhanChanNuoiDaCaps_ListView">
+      <Columns>
+        <ColumnInfo Id="Lock" Caption="Khoá" />
+        <ColumnInfo Id="Close" Caption="Đóng" />
+      </Columns>
+    </ListView>
+    <ListView Id="TrangTraiChanNuoi_ListView">
+      <Columns>
+        <ColumnInfo Id="Lock" Caption="Khoá" />
+        <ColumnInfo Id="Close" Caption="Đóng" />
+      </Columns>
+    </ListView>
+    <ListView Id="TrangTraiChanNuoi_VungChanNuoiAnToanDichBenhs_ListView">
+      <Columns>
+        <ColumnInfo Id="Lock" Caption="Khoá" />
+        <ColumnInfo Id="Close" Caption="Đóng" />
+      </Columns>
+    </ListView>
+    <DetailView Id="VBHD_LuatChanNuoi_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="VBHD_LuatChanNuoi" Caption="VBHD_LuatChanNuoi" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="VungChanNuoiAnToanDichBenh_DetailView">
+      <Items>
+        <PropertyEditor Id="Close" Caption="Đóng" />
+        <PropertyEditor Id="Lock" Caption="Khoá" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="VungChanNuoiAnToanDichBenh" Caption="Vùng chăn nuôi an toàn dịch bệnh" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="VungChanNuoiAnToanDichBenh_ListView">
+      <Columns>
+        <ColumnInfo Id="Lock" Caption="Khoá" />
+        <ColumnInfo Id="Close" Caption="Đóng" />
+      </Columns>
+    </ListView>
+  </Views>
 </Application>

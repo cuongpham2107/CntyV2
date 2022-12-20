@@ -27,4 +27,13 @@ public class ApplicationUser : PermissionPolicyUser, ISecurityUserWithLoginInfo 
         result.User = this;
         return result;
     }
+
+    CoQuanQuanLy coquanQuanly;
+    [DevExpress.ExpressApp.DC.XafDisplayName("Cơ quan quản lý")]
+    [Association("CoQuanQuanLy-ApplicationUsers")]
+    public CoQuanQuanLy CoquanQuanly
+    {
+        get => coquanQuanly;
+        set => SetPropertyValue(nameof(CoquanQuanly), ref coquanQuanly, value);
+    }
 }

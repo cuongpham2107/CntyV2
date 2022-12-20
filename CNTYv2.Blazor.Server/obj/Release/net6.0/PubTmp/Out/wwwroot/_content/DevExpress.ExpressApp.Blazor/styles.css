@@ -20,24 +20,7 @@
     opacity: 0.65;
     pointer-events: none;
 }
-.xaf-append-image-button.dropdown-toggle::before,
-.xaf-append-image-button.dropdown-toggle::after {
-    visibility: hidden;
-}
-.xaf-append-image-button.dropdown-toggle::after {
-    margin-left: 0;
-}
-.xaf-append-caption-button.dropdown-toggle::after,
-.btn-sm.xaf-append-caption-button.dropdown-toggle::after {
-    border-right: 0;
-    border-left: 0;
-}
-.xaf-append-image-button.dropdown-toggle:not(.xaf-append-caption-button) .xaf-image {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
+
 .btn-lg .xaf-dx-button-image {
     height: 36px !important;
     width: 36px !important;
@@ -85,9 +68,66 @@
     margin-left: 0.3em;
 }
 /* Loading Panel End */
-/* NavBar Start */
+/* Navigation Start */
+.dxbs-tree .xaf-nav-menu-item-icon {
+    margin-right: 5px;
+}
+.dxbs-tree > .dxbl-navigation-filter {
+    width: auto;
+    margin: 1rem 0.5rem 0.5rem;
+}
+.xaf-tree-view {
+    height: calc(100% - 1.5rem);
+}
+.xaf-nav-menu-item-icon {
+    max-width: 16px;
+    max-height: 16px;
+    width: 16px;
+    height: 16px;
+}
+.xaf-navmenu span.xaf-nav-menu-item-icon { /* hide icons with image url == null */
+    display: none;
+}
+.xaf-nav-item {
+    overflow: hidden;
+}
+li.xaf-nav-item > a {
+    position: relative;
+}
+/*div.xaf-nav-item > a > .dxbl-accordion-item-text-container {
+    position: relative;
+}*/
+.clickable-xaf-nav-item > a .xaf-nav-link,
+.clickable-xaf-nav-item > div > a .xaf-nav-link {
+    text-decoration: underline;
+}
+
+.dxbl-accordion-group-header > a {
+    color: inherit;
+}
+
+.dxbl-accordion-group-header .xaf-nav-link {
+    font-weight: 500;
+}
+.xaf-navigation-link-click-area {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+}
+.dxbl-accordion-items-container .dxbl-group-expand-btn,
+.xaf-tree-view .xaf-nav-item .btn-link {
+    z-index: 5;
+}
+.dxbl-accordion-group-header > .dxbl-text {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.dxbl-accordion-items-container .dxbl-group {
+    border-radius: 0;
+}
 /* Fill parent to enlarge click area */
-.xaf-navmenu.dxbs-tree .xaf-nav-link {
+.xaf-navmenu.dxbl-tree .xaf-nav-link {
     flex: auto;
     align-self: stretch;
     margin: -.125rem -0.625rem -.125rem 0;
@@ -95,7 +135,11 @@
     display: flex;
     align-items: center;
 }
-/* NavBar End */
+/* Make DxTreeView images fully opaque */
+.dxbs-tree ul.nav > .nav-item > .nav-link:not(.disabled) .dxbl-image.xaf-nav-menu-item-icon {
+    opacity: 1;
+}
+/* Navigation End */
 /* Template Start */
 .xaf-flex-auto {
     flex: auto;
@@ -280,84 +324,6 @@ div.image-8 {
 }
 
 /* ViewCaptionComponent End */
-/* Layout Start */
-.xafPopup .col-md-1,
-.xafPopup .col-md-2,
-.xafPopup .col-md-3,
-.xafPopup .col-md-4,
-.xafPopup .col-md-5,
-.xafPopup .col-md-6,
-.xafPopup .col-md-7,
-.xafPopup .col-md-8,
-.xafPopup .col-md-9,
-.xafPopup .col-md-10,
-.xafPopup .col-md-11,
-.xafPopup .col-md-12,
-.dxbs-dropdown-edit.dxbs-date-edit, /* TO REMOVE */
-.xafPopup .dxbs-fl-gd > .card,
-.xafPopup .dxbs-gridview > .card { /* TO REMOVE .xafPopup */
-    position: static;
-}
-
-.main-content div:not(.card)>.row>.col-md-12 {
-    padding-left: 0;
-    padding-right: 0;
-}
-
-@media (max-width: 767.98px) {
-
-    .main-content div:not(.card)>.row>.col-md-1,
-    .main-content div:not(.card)>.row>.col-md-2,
-    .main-content div:not(.card)>.row>.col-md-3,
-    .main-content div:not(.card)>.row>.col-md-4,
-    .main-content div:not(.card)>.row>.col-md-5,
-    .main-content div:not(.card)>.row>.col-md-6,
-    .main-content div:not(.card)>.row>.col-md-7,
-    .main-content div:not(.card)>.row>.col-md-8,
-    .main-content div:not(.card)>.row>.col-md-9,
-    .main-content div:not(.card)>.row>.col-md-10,
-    .main-content div:not(.card)>.row>.col-md-11 {
-        padding-left: 0;
-        padding-right: 0;
-    }
-}
-
-.main-content .dxbs-fl .dxbs-fl-gd,
-.main-content .dxbs-fl .dxbs-fl-gt {
-    margin-top: 0;
-}
-
-@media (min-width: 767.98px) {
-
-    .main-content div:not(.card)>.row>.col-md-1:first-child,
-    .main-content div:not(.card)>.row>.col-md-2:first-child,
-    .main-content div:not(.card)>.row>.col-md-3:first-child,
-    .main-content div:not(.card)>.row>.col-md-4:first-child,
-    .main-content div:not(.card)>.row>.col-md-5:first-child,
-    .main-content div:not(.card)>.row>.col-md-6:first-child,
-    .main-content div:not(.card)>.row>.col-md-7:first-child,
-    .main-content div:not(.card)>.row>.col-md-8:first-child,
-    .main-content div:not(.card)>.row>.col-md-9:first-child,
-    .main-content div:not(.card)>.row>.col-md-10:first-child,
-    .main-content div:not(.card)>.row>.col-md-11:first-child {
-        padding-left: 0;
-    }
-
-    .main-content div:not(.card)>.row>.col-md-1:last-child,
-    .main-content div:not(.card)>.row>.col-md-2:last-child,
-    .main-content div:not(.card)>.row>.col-md-3:last-child,
-    .main-content div:not(.card)>.row>.col-md-4:last-child,
-    .main-content div:not(.card)>.row>.col-md-5:last-child,
-    .main-content div:not(.card)>.row>.col-md-6:last-child,
-    .main-content div:not(.card)>.row>.col-md-7:last-child,
-    .main-content div:not(.card)>.row>.col-md-8:last-child,
-    .main-content div:not(.card)>.row>.col-md-9:last-child,
-    .main-content div:not(.card)>.row>.col-md-10:last-child,
-    .main-content div:not(.card)>.row>.col-md-11:last-child {
-        padding-right: 0;
-    }
-}
-
 /*Prevent Pull-Down-To-Refresh-In-Chrome Start*/
 @media (max-width: 575.98px) {
 
@@ -494,7 +460,7 @@ div.image-8 {
     margin-left: .75rem;
 }
 
-.xaf-alert.show {    
+.xaf-alert.show {
     display: flex;
 }
 
@@ -636,7 +602,7 @@ div.image-8 {
     opacity: .8;
     margin: 0 auto;
 }
-.dxbs-grid-group-row .xaf-protected-content-icon {
+.dxbl-grid-group-row .xaf-protected-content-icon {
     display: inline-flex;
 }
 /*Protected Content - End*/
@@ -652,7 +618,7 @@ div.image-8 {
     max-height: 100%;
 }
 
-.form-group .xaf-component-image {
+.dxbl-fl-ctrl .xaf-component-image {
     max-width: 100%;
 }
 
@@ -858,21 +824,24 @@ td.xaf-image-cell {
 .xafPopup {
     --is-widescreen: 1;
 }
-dxbl-modal > .dxbs-modal > .xafPopup.dxbs-popup {
+.dxbl-modal > .dxbl-modal-root > .dxbl-popup.xafPopup {
     margin: 0;
 }
-dxbl-modal > .dxbs-modal > .xafPopup.dxbs-popup.dxbs-popup-scrollable > .dxbs-modal-content {
-    max-height: 100vh;
-}
+    .dxbl-modal > .dxbl-modal-root > .dxbl-popup.xafPopup.dxbl-popup-scrollable > .dxbl-modal-content {
+        max-height: 100vh;
+    }
 @media (max-width: 575.98px) {
     .xafPopup {
         --is-widescreen: 0;
     }
-    dxbl-modal > .dxbs-modal > .xafPopup.dxbs-popup.dxbs-popup-scrollable > .dxbs-modal-content {
+    .dxbl-modal > .dxbl-modal-root > .dxbl-popup.xafPopup.dxbl-popup-scrollable > .dxbl-modal-content {
         border-radius: 0;
     }
 }
-
+.dxbl-modal > .dxbl-modal-root > .dxbl-popup > .dxbl-modal-content > .dxbl-modal-header,
+.dxbl-modal > .dxbl-modal-root > .dxbl-popup > .dxbl-modal-content > .dxbl-modal-footer {
+    min-height: 48px;
+}
 /*Popup End*/
 /* FileDataComponent Start */
 .file-data-editor .file-data-span-class .dxbs-clear-btn {
@@ -885,31 +854,27 @@ dxbl-modal > .dxbs-modal > .xafPopup.dxbs-popup.dxbs-popup-scrollable > .dxbs-mo
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
 }
-
-.file-data-value-container {
-    flex: auto;
-    position: relative;
-}
-
-.file-data-link {
+.file-data-link input {
+    color: rgba(var(--bs-primary-rgb));
     text-decoration: underline;
+    cursor: pointer;
 }
-
-.file-data-cover {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 1;
-}
-
 .file-data-container > div:first-child {
     position: relative !important;
     border-top-width: 0;
     border-bottom-width: 0;
     margin-left: 0;
     margin-right: 0;
+}
+.file-data-clear-button {
+    border-left-width: 0px;
+    background-color: var(--dxbl-text-edit-readonly-bg);
+}
+.file-data-clear-button .dxbl-image {
+    border-radius: 50%;
+    background-color: rgba(var(--dxbl-text-edit-clear-btn-bg)/25%);
+    fill: currentcolor;
+    color: var(--dxbl-text-edit-clear-btn-image-color);
 }
 /* FileDataComponent End */
 /* Reconnect Modal Start */
@@ -1008,7 +973,7 @@ dxbl-modal > .dxbs-modal > .xafPopup.dxbs-popup.dxbs-popup-scrollable > .dxbs-mo
 .themes-menu .nav-item:not(.show) .nav-link.active:not(.disabled) .theme-name {
     color: currentColor!important;
 }
-.themes-menu .nav-item:not(.show) .nav-link:not(.disabled):not(.active) .theme-name { 
+.themes-menu .nav-item:not(.show) .nav-link:not(.disabled):not(.active) .theme-name {
     opacity: .8;
 }
 .themes-menu .nav-item:not(.show) .nav-link:not(.disabled):not(.active) {
@@ -1046,11 +1011,9 @@ dxbl-modal > .dxbs-modal > .xafPopup.dxbs-popup.dxbs-popup-scrollable > .dxbs-mo
     padding-bottom: 0.5rem;
 }
 
-.logon-toolbar .btn-toolbar {
-    width: 100%;
-}
-
-.logon-toolbar .btn-toolbar > div {
+.logon-toolbar .dxbl-btn-toolbar,
+.logon-toolbar .dxbl-btn-toolbar > .dxbl-btn-group,
+.logon-toolbar .dxbl-btn-toolbar > .dxbl-btn-group > .dxbl-btn {
     width: 100%;
 }
 
@@ -1059,25 +1022,25 @@ dxbl-modal > .dxbs-modal > .xafPopup.dxbs-popup.dxbs-popup-scrollable > .dxbs-mo
     padding-bottom: 0.5rem;
 }
 
-.logon-bottom-toolbar .btn-toolbar > div:nth-last-child(2) {
-    flex: 0 !important;
-}
+    .logon-bottom-toolbar .dxbl-btn-toolbar > .dxbl-toolbar-placeholder {
+        flex: 0 !important;
+    }
 
-.logon-bottom-toolbar .btn-toolbar > div:nth-last-child(3) {
-    margin-right: 0!important;
-}
+    .logon-bottom-toolbar .dxbl-btn-toolbar > .dxbl-btn-group.dxbl-toolbar-group {
+        flex: 1;
+    }
 
-.logon-bottom-toolbar .btn-toolbar > .btn-group.dxbs-toolbar-group {   
-    flex: 1;
-}
+    .logon-bottom-toolbar .dxbl-btn-toolbar > .dxbl-btn-group > .dxbl-btn {
+        width: 100%;
+    }
 
-.middle-text-separator {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: var(--bs-gray);
-    padding: 0.5rem 0;
-}
+    .middle-text-separator {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: var(--bs-gray);
+        padding: 0.5rem 0;
+    }
 .middle-text-separator::before, .middle-text-separator::after {
     content: '';
     flex: 1;
@@ -1199,7 +1162,7 @@ dxbl-modal > .dxbs-modal > .xafPopup.dxbs-popup.dxbs-popup-scrollable > .dxbs-mo
 .error-btn-show-details {
     min-width: 125px;
 }
-@media (max-width: 575.98px) {   
+@media (max-width: 575.98px) {
     .error-image {
         margin-right: 1rem;
     }
@@ -1212,64 +1175,167 @@ dxbl-modal > .dxbs-modal > .xafPopup.dxbs-popup.dxbs-popup-scrollable > .dxbs-mo
 }
 /* Error Page End */
 /* Validation Start */
-.dxbs-fl-ctrl .invalid.validation-invalid.form-control,
-.dxbs-fl-ctrl .invalid.validation-invalid .form-control,
-.dxbs-fl-ctrl .invalid.validation-invalid.dxbs-checkbox .custom-checkbox .form-check-input,
-.dxbs-fl-ctrl .invalid.validation-invalid.custom-checkbox .custom-control-label::before,
-.dxbs-fl-ctrl .invalid.validation-invalid .custom-checkbox .custom-control-label::before,
-.dxbs-fl-ctrl .invalid.validation-invalid.custom-checkbox .custom-control-label:not(:checked)::before,
-.dxbs-fl-ctrl .invalid.validation-invalid .custom-checkbox .custom-control-label:not(:checked)::before {
+.dxbl-fl-ctrl .xaf-validation-message-container .invalid.validation-invalid.dxbl-text-edit,
+.dxbl-fl-ctrl .xaf-validation-message-container .invalid.validation-invalid .dxbl-text-edit,
+.dxbl-fl-ctrl .xaf-validation-message-container .invalid.validation-invalid.dxbl-btn,
+.dxbl-fl-ctrl .xaf-validation-message-container .invalid.validation-invalid .dxbl-btn,
+.dxbl-fl-ctrl .xaf-image-editor.validation-invalid .img-thumbnail {
     border-color: var(--danger, var(--bs-danger));
+    --dxbl-text-edit-validation-invalid-color: var(--danger, var(--bs-danger));
+    --dxbl-text-edit-focus-shadow-color: rgba(var(--danger-rgb, var(--bs-danger-rgb)), 0.25);
+    --dxbl-btn-focus-shadow-color: rgba(var(--danger-rgb, var(--bs-danger-rgb)), 0.5);
 }
 
-.dxbs-fl-ctrl .invalid.validation-warning.form-control,
-.dxbs-fl-ctrl .invalid.validation-warning .form-control,
-.dxbs-fl-ctrl .invalid.validation-warning.dxbs-checkbox .custom-checkbox .form-check-input,
-.dxbs-fl-ctrl .invalid.validation-warning.custom-checkbox .custom-control-label::before,
-.dxbs-fl-ctrl .invalid.validation-warning .custom-checkbox .custom-control-label::before,
-.dxbs-fl-ctrl .invalid.validation-warning.custom-checkbox .custom-control-label:not(:checked)::before,
-.dxbs-fl-ctrl .invalid.validation-warning .custom-checkbox .custom-control-label:not(:checked)::before {
+.dxbl-fl-ctrl .xaf-validation-message-container .invalid.validation-warning.dxbl-text-edit,
+.dxbl-fl-ctrl .xaf-validation-message-container .invalid.validation-warning .dxbl-text-edit,
+.dxbl-fl-ctrl .xaf-validation-message-container .invalid.validation-warning.dxbl-btn,
+.dxbl-fl-ctrl .xaf-validation-message-container .invalid.validation-warning .dxbl-btn,
+.dxbl-fl-ctrl .xaf-image-editor.validation-warning .img-thumbnail {
     border-color: var(--warning, var(--bs-warning));
+    --dxbl-text-edit-validation-invalid-color: var(--warning, var(--bs-warning));
+    --dxbl-text-edit-focus-shadow-color: rgba(var(--warning-rgb, var(--bs-warning-rgb)), 0.25);
+    --dxbl-btn-focus-shadow-color: rgba(var(--warning-rgb, var(--bs-warning-rgb)), 0.5);
 }
 
-.dxbs-fl-ctrl .invalid.validation-info.form-control,
-.dxbs-fl-ctrl .invalid.validation-info .form-control,
-.dxbs-fl-ctrl .invalid.validation-info.dxbs-checkbox .custom-checkbox .form-check-input,
-.dxbs-fl-ctrl .invalid.validation-info.custom-checkbox .custom-control-label::before,
-.dxbs-fl-ctrl .invalid.validation-info .custom-checkbox .custom-control-label::before,
-.dxbs-fl-ctrl .invalid.validation-info.custom-checkbox .custom-control-label:not(:checked)::before,
-.dxbs-fl-ctrl .invalid.validation-info .custom-checkbox .custom-control-label:not(:checked)::before {
+.dxbl-fl-ctrl .xaf-validation-message-container .invalid.validation-info.dxbl-text-edit,
+.dxbl-fl-ctrl .xaf-validation-message-container .invalid.validation-info .dxbl-text-edit,
+.dxbl-fl-ctrl .xaf-validation-message-container .invalid.validation-info.dxbl-btn,
+.dxbl-fl-ctrl .xaf-validation-message-container .invalid.validation-info .dxbl-btn,
+.dxbl-fl-ctrl .xaf-image-editor.validation-info .img-thumbnail {
     border-color: var(--info, var(--bs-info));
+    --dxbl-text-edit-validation-invalid-color: var(--info, var(--bs-info));
+    --dxbl-text-edit-focus-shadow-color: rgba(var(--info-rgb, var(--bs-info-rgb)), 0.25);
+    --dxbl-btn-focus-shadow-color: rgba(var(--info-rgb, var(--bs-info-rgb)), 0.5);
 }
 
-.xaf-image-editor.validation-invalid {
-    border: 1px solid var(--danger, var(--bs-danger));
+.dxbl-fl-ctrl .xaf-validation-message-container .invalid.validation-invalid.dxbl-checkbox {
+    --dxbl-checkbox-check-element-checked-bg: rgba(var(--bs-danger-rgb), 0.85);
+    --dxbl-checkbox-check-element-checked-hover-bg: rgba(var(--bs-danger-rgb), 1);
+    --dxbl-checkbox-checked-focus-shadow-color: rgba(var(--bs-danger-rgb), 0.5);
+    --dxbl-checkbox-check-element-unchecked-border-color: rgba(var(--bs-danger-rgb), 0.85);
+    --dxbl-checkbox-check-element-unchecked-hover-border-color: rgba(var(--bs-danger-rgb), 1);
+    --dxbl-checkbox-unchecked-focus-shadow-color: rgba(var(--bs-danger-rgb), 0.5);
 }
-.xaf-image-editor.validation-warning {
-    border: 1px solid var(--warning, var(--bs-warning));
+
+.dxbl-fl-ctrl .xaf-validation-message-container .invalid.validation-warning.dxbl-checkbox {
+    --dxbl-checkbox-check-element-checked-bg: rgba(var(--bs-warning-rgb), 0.85);
+    --dxbl-checkbox-check-element-checked-hover-bg: rgba(var(--bs-warning-rgb), 1);
+    --dxbl-checkbox-checked-focus-shadow-color: rgba(var(--bs-warning-rgb), 0.5);
+    --dxbl-checkbox-check-element-unchecked-border-color: rgba(var(--bs-warning-rgb), 0.85);
+    --dxbl-checkbox-check-element-unchecked-hover-border-color: rgba(var(--bs-warning-rgb), 1);
+    --dxbl-checkbox-unchecked-focus-shadow-color: rgba(var(--bs-warning-rgb), 0.5);
 }
-.xaf-image-editor.validation-info {
-    border: 1px solid var(--info, var(--bs-info));
+
+.dxbl-fl-ctrl .xaf-validation-message-container .invalid.validation-info.dxbl-checkbox {
+    --dxbl-checkbox-check-element-checked-bg: rgba(var(--bs-info-rgb), 0.85);
+    --dxbl-checkbox-check-element-checked-hover-bg: rgba(var(--bs-info-rgb), 1);
+    --dxbl-checkbox-checked-focus-shadow-color: rgba(var(--bs-info-rgb), 0.5);
+    --dxbl-checkbox-check-element-unchecked-border-color: rgba(var(--bs-info-rgb), 0.85);
+    --dxbl-checkbox-check-element-unchecked-hover-border-color: rgba(var(--bs-info-rgb), 1);
+    --dxbl-checkbox-unchecked-focus-shadow-color: rgba(var(--bs-info-rgb), 0.5);
 }
+
 /* Validation End */
-/* Menu Start */
-.dxbs-toolbar .parametrized-action-wrapper,
-.dxbs-toolbar .combobox-xaf-action {
-    min-width: 10rem;
+/* Inline Edit Start */
+/* center-align checkboxes in "Inline" inline edit mode */
+.dxbl-grid-edit-row > td dxbl-check {
+    justify-content: center;
+}
+/* fit image sizes to row width in "Inline" mode */
+.dxbl-grid-edit-row .xaf-component-image {
+    max-width: 100%;
+}
+/* Inline Edit End */
+
+/* MasterDetail Begin */
+
+.xaf-masterdetail-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
 }
 
-.dxbs-button-edit.dxbs-edit-clbv.xaf-empty-action > .parametrized-action-wrapper .dxbs-editor-clear-btn {
-    visibility: hidden;
+.xaf-masterdetail-container.direction-horizontal {
+    flex-flow: row;
+}
+.xaf-masterdetail-container.direction-vertical {
+    flex-flow: column;
 }
 
-.btn-group.dxbs-toolbar-group.group-has-template {
-    box-shadow: none;
+.xaf-masterdetail-splitter {
+    flex: 0 0 1px;
+    background-color: #CFD4D9;
 }
 
-.dxbs-toolbar-btn.btn-lg .xaf-toolbar-image {
-    height: 24px !important;
-    width: 24px !important;
-    mask-size: 24px !important;
-    -webkit-mask-size: 24px !important;
+/* prevents the horizontal scroll bar from appearing due to DxFormLayout having a negative margin */
+.xaf-masterdetail-container.direction-horizontal > .xaf-masterdetail-splitter {
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-bottom: -1rem; /* extends the splitter line to the bottom of the page */
 }
-/* Menu End */
+.xaf-masterdetail-container.direction-vertical > .xaf-masterdetail-splitter {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.xaf-masterdetail-detailview .xaf-masterdetail-detailview-holder {
+    padding-right: 1rem; /* prevents a horizontal scroll bar in the detail view */
+}
+
+.xaf-masterdetail-view {
+    flex: 0%;
+    min-height: 300px;
+    min-width: 300px;
+}
+
+/* grid height cannot exceed the parent container's height */
+.xaf-masterdetail-listview {
+    height: 100%;
+}
+.xaf-masterdetail-listview > .grid-content {
+    height: 100%;
+}
+.xaf-masterdetail-listview > .grid-content > dxbl-grid {
+    max-height: 100%;
+}
+
+.xaf-open-detailview-button > * {
+    width: 100%;
+}
+
+.xaf-masterdetail-modified > :first-child {
+    box-shadow: inset 4px 0 0 -2px var(--bs-primary);
+}
+
+.xaf-masterdetail-detailview-placeholder {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+/* MasterDetail End */
+
+.xaf-popup-edit-form {
+    max-width: 800px !important;
+}
+
+/* TODO Gorislov: temp fix for new blazor renderer */
+
+.dxbl-modal-content {
+    overflow-y: auto !important;
+}
+.new-object-hidden-data-row {
+    display: none;
+}
+
+.parametrized-action-wrapper {
+    width: 230px;
+}
+/* Temporary fix of grid empty data */
+.dxbl-grid .dxbl-grid-empty-data > span {
+    font-size: 0.77rem;
+    opacity: 0.7;
+}

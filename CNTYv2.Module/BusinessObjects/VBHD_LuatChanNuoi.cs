@@ -21,7 +21,7 @@ namespace CNTYv2.Module.BusinessObjects
     [NavigationItem(Menu.DataMenuItem)]
     [DefaultProperty(nameof(TenVanBan))]
     [ImageName("BO_Contact")]
-    [XafDisplayName("VB Luật chăn nuôi")]
+    [XafDisplayName("Văn bản luật chăn nuôi")]
     [DefaultListViewOptions(MasterDetailMode.ListViewOnly, true, NewItemRowPosition.Top)]
     [ListViewFindPanel(true)]
     [LookupEditorMode(LookupEditorMode.AllItemsWithSearch)]
@@ -38,44 +38,26 @@ namespace CNTYv2.Module.BusinessObjects
             
         }
 
-        string tienDo;
-        string namDenNam;
-        string nam;
-        LoaiTienDo loaiTienDo;
+
+        FileData fileData;
+        string tienDoThucHien;
         string ghiChu;
         string tenVanBan;
         [XafDisplayName("Tên văn bản")]
+        [RuleRequiredField("Bắt buộc phải có VBHD_LuatChanNuoi.TenVanBan", DefaultContexts.Save, "Trường dữ liệu không được để trống")]
+        [Size(SizeAttribute.Unlimited)]
         public string TenVanBan
         {
             get => tenVanBan;
             set => SetPropertyValue(nameof(TenVanBan), ref tenVanBan, value);
         }
-        [XafDisplayName("Loại tiến độ")]
-        public LoaiTienDo LoaiTienDo
+        [XafDisplayName("Tiến độ thực hiện")]
+        [RuleRequiredField("Bắt buộc phải có VBHD_LuatChanNuoi.TienDoThucHien", DefaultContexts.Save, "Trường dữ liệu không được để trống")]
+        [Size(SizeAttribute.Unlimited)]
+        public string TienDoThucHien
         {
-            get => loaiTienDo;
-            set => SetPropertyValue(nameof(LoaiTienDo), ref loaiTienDo, value);
-        }
-        [XafDisplayName("Năm")]
-        //[Appearance("HideNam", AppearanceItemType.ViewItem, "[LoaiTienDo] <> ##Enum#CNTYv2.Module.BusinessObjects.LoaiTienDo,n#", Visibility = DevExpress.ExpressApp.Editors.ViewItemVisibility.Hide, Context ="Any")]
-        public string Nam
-        {
-            get => nam;
-            set => SetPropertyValue(nameof(Nam), ref nam, value);
-        }
-        [XafDisplayName("Từ năm - đến năm")]
-        //[Appearance("HideNamDenNam", AppearanceItemType.ViewItem, "[LoaiTienDo] <> ##Enum#CNTYv2.Module.BusinessObjects.LoaiTienDo,nn#", Visibility = DevExpress.ExpressApp.Editors.ViewItemVisibility.Hide ,Context = "Any")]
-        public string NamDenNam
-        {
-            get => namDenNam;
-            set => SetPropertyValue(nameof(NamDenNam), ref namDenNam, value);
-        }
-        [XafDisplayName("Tiến độ")]
-        //[Appearance("HideText", AppearanceItemType.ViewItem, "[LoaiTienDo] <> ##Enum#CNTYv2.Module.BusinessObjects.LoaiTienDo,t#", Visibility = DevExpress.ExpressApp.Editors.ViewItemVisibility.Hide, Context = "Any")]
-        public string TienDo
-        {
-            get => tienDo;
-            set => SetPropertyValue(nameof(TienDo), ref tienDo, value);
+            get => tienDoThucHien;
+            set => SetPropertyValue(nameof(TienDoThucHien), ref tienDoThucHien, value);
         }
         [XafDisplayName("Ghi chú")]
         public string GhiChu
@@ -83,6 +65,13 @@ namespace CNTYv2.Module.BusinessObjects
             get => ghiChu;
             set => SetPropertyValue(nameof(GhiChu), ref ghiChu, value);
         }
+        [XafDisplayName("File dữ liệu")]
+        public FileData FileData
+        {
+            get => fileData;
+            set => SetPropertyValue(nameof(FileData), ref fileData, value);
+        }
+
     }
     
 }

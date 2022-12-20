@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <DetailView Id="TrangTraiChanNuoi_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="BPXLMT_ChanNuoiNongHos_Group" Direction="Vertical" RelativeSize="62.72727272727273" Index="1">
+            <LayoutItem Id="BPXLMT_ChanNuoiNongHos" RelativeSize="100" />
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors" Caption="Ghi chú" RelativeSize="19.272727272727273" Removed="True">
+            <LayoutItem Id="GhiChu" Removed="True" />
+          </LayoutGroup>
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="TrangTraiChanNuoi">
+              <LayoutGroup Id="TrangTraiChanNuoi_col1">
+                <LayoutItem Id="DiaChi" RelativeSize="14.457831325301205" />
+                <LayoutItem Id="SoDienThoai" RelativeSize="14.457831325301205" />
+              </LayoutGroup>
+              <LayoutGroup Id="TrangTraiChanNuoi_col2">
+                <LayoutItem Id="LHChanNuoi" RelativeSize="14.457831325301205" Index="1" />
+                <LayoutItem Id="GiayChungNhanChanNuoiDaCap" RelativeSize="16.842105263157894" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <ActionDesign>
+    <Actions>
+      <Action Id="Cancel" Caption="Thoát" />
+      <Action Id="CancelAction" Caption="Thoát" />
+      <Action Id="ChangePasswordByUser" Caption="Đặt lại mật khẩu" />
+      <Action Id="Close" Caption="Đóng" />
+      <Action Id="Delete" ConfirmationMessage="&#xD;&#xA;Bạn sắp xóa (các) bản ghi đã chọn. Bạn có muốn tiếp tục?" />
+      <Action Id="Delete Item" ConfirmationMessage="Bạn sắp xóa (các) mục đã chọn. Bạn có muốn tiếp tục?" />
+      <Action Id="DialogCancel" Caption="Thoát" />
+      <Action Id="DialogOK" Caption="Lưu" />
+      <Action Id="FullTextSearch" NullValuePrompt="Từ khoá tìm kiếm..." />
+      <Action Id="ReportWizard_Close" Caption="Đóng" />
+    </Actions>
+    <ActionToContainerMapping>
+      <ActionContainer Id="Close" Caption="Đóng" />
+    </ActionToContainerMapping>
+  </ActionDesign>
+  <BOModel>
+    <Class Name="DevExpress.ExpressApp.Security.ChangePasswordOnLogonParameters">
+      <OwnMembers>
+        <Member Name="ConfirmPassword" Caption="Nhập lại mật khẩu" />
+        <Member Name="NewPassword" Caption="Mật khẩu mới" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.ExpressApp.Security.ChangePasswordParameters">
+      <OwnMembers>
+        <Member Name="OldPassword" Caption="Mật khẩu cũ" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.ExpressApp.Security.ProceedMember">
+      <OwnMembers>
+        <Member Name="Name" Caption="Tên" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.ExpressApp.StateMachine.Xpo.XpoStateMachine">
+      <OwnMembers>
+        <Member Name="Name" Caption="Tên" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.ExpressApp.SystemModule.DashboardCreationInfo">
+      <OwnMembers>
+        <Member Name="DashboardName" Caption="Tên" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.ExpressApp.SystemModule.DashboardName">
+      <OwnMembers>
+        <Member Name="Name" Caption="Tên" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.ExpressApp.Utils.StringObject">
+      <OwnMembers>
+        <Member Name="Name" Caption="Tên" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.Persistent.BaseImpl.ModelDifferenceAspect">
+      <OwnMembers>
+        <Member Name="Name" Caption="Tên" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.Persistent.BaseImpl.PermissionPolicy.PermissionPolicyRoleBase">
+      <OwnMembers>
+        <Member Name="Name" Caption="Tên" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.Persistent.BaseImpl.PermissionPolicy.PermissionPolicyUser">
+      <OwnMembers>
+        <Member Name="ChangePasswordOnFirstLogon" Caption="Bắt buộc thay đổi mật khẩu" />
+        <Member Name="IsActive" Caption="Trạng thái" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.Persistent.Validation.IRuleBaseProperties">
+      <OwnMembers>
+        <Member Name="Name" Caption="Tên" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.Persistent.Validation.RuleBaseProperties">
+      <OwnMembers>
+        <Member Name="Name" Caption="Tên" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
+  <Localization>
+    <LocalizationGroup Name="Messages">
+      <LocalizationItem Name="SelectItemToEdit" Value="Chọn một mục để chỉnh sửa" />
+    </LocalizationGroup>
+    <LocalizationGroup Name="VisualComponents">
+      <LocalizationGroup Name="ImageEdit">
+        <LocalizationItem Name="Cancel" Value="Thoát" />
+      </LocalizationGroup>
+    </LocalizationGroup>
+  </Localization>
+  <Views>
+    <DetailView Id="ChangePasswordOnLogonParameters_Blazor_DetailView" Caption="Thay đổi mật khẩu" />
+    <DetailView Id="ChangePasswordOnLogonParameters_DetailView" Caption="Thay đổi mật khẩu" />
+    <DetailView Id="ChangePasswordParameters_Blazor_DetailView" Caption="Thay đổi mật khẩu" />
+    <DetailView Id="ChangePasswordParameters_DetailView" Caption="Thay đổi mật khẩu" />
+    <ListView Id="ModelDifference_Aspects_ListView">
+      <Columns>
+        <ColumnInfo Id="DisplayName" Caption="Tên" />
+      </Columns>
+    </ListView>
+  </Views>
+</Application>

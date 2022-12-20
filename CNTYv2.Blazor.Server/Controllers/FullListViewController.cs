@@ -38,8 +38,6 @@ namespace CNTYv2.Blazor.Server.Controllers
             {
                 IDxGridAdapter dataGridAdapter = gridListEditor.GetGridAdapter();
 
-
-
                 dataGridAdapter.GridModel.ColumnResizeMode = DevExpress.Blazor.GridColumnResizeMode.Disabled;
 
                 dataGridAdapter.GridModel.ShowGroupPanel = true;

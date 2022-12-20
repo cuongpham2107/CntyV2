@@ -1,7 +1,7 @@
 ﻿/**
 * DevExpress Analytics (dist\css\dx-analytics.common.css)
-* Version:  22.1.6
-* Build date: Oct 17, 2022
+* Version:  22.2.3
+* Build date: Dec 6, 2022
 * Copyright (c) 2012 - 2022 Developer Express Inc. ALL RIGHTS RESERVED
 * License: https://www.devexpress.com/Support/EULAs/universal.xml
 */
@@ -148,6 +148,7 @@
   padding-left: 3px;
 }
 .dx-editors .dx-editor .dx-field-label.dx-accordion-header {
+  cursor: pointer;
   position: absolute;
   left: 16px;
   right: 60%;
@@ -488,7 +489,7 @@
 }
 .dx-rtl .dx-treelist .dx-treelist-item .dx-treelist-caption .dx-treelist-action-container {
   float: left;
-  margin-left: 12px;
+  margin-left: 10px;
   margin-right: 0;
 }
 .dx-rtl .dx-treelist .dx-treelist-item .dx-treelist-caption .dx-treelist-selectedcontent {
@@ -497,15 +498,9 @@
 }
 .dx-rtl .dx-treelist .dx-treelist-item .dx-treelist-action {
   float: right;
-  margin-left: 4px;
-  margin-right: 0;
-  margin-top: 3px;
 }
 .dx-rtl .dx-treelist .dx-treelist-item .dx-treelist-action-edit {
   float: right;
-  margin-top: 3px;
-  margin-left: 4px;
-  margin-right: 0;
 }
 .dx-treelist .dx-treelist-item {
   position: relative;
@@ -538,18 +533,16 @@
 }
 .dx-treelist .dx-treelist-item .dx-treelist-collapsedbutton {
   float: left;
-  height: 30px;
+  cursor: pointer;
+  height: 28px;
+  width: 28px;
+  min-width: 28px;
   display: inline-block;
-  margin-right: 9px;
-  padding: 0 4.5px 0 4.5px;
+  margin: 1px;
+  padding: 0;
   position: relative;
   z-index: 1;
-}
-.dx-treelist .dx-treelist-item .dx-treelist-collapsedbutton svg {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  margin-left: -12px;
 }
 .dx-treelist .dx-treelist-item .dx-treelist-caption {
   line-height: 30px;
@@ -557,7 +550,8 @@
 }
 .dx-treelist .dx-treelist-item .dx-treelist-caption .dx-treelist-action-container {
   float: right;
-  margin-right: 12px;
+  margin-right: 10px;
+  display: flex;
 }
 .dx-treelist .dx-treelist-item .dx-treelist-caption .dx-treelist-selectedcontent {
   overflow: hidden;
@@ -602,15 +596,13 @@
   width: 24px;
   height: 24px;
   padding: 0px;
-  margin-right: 4px;
-  margin-left: -3px;
+  margin: 3px 2px;
 }
 .dx-treelist .dx-treelist-item .dx-treelist-action-edit {
   width: 24px;
   height: 24px;
   padding: 0px;
-  margin-right: 4px;
-  margin-left: -3px;
+  margin: 3px 2px;
 }
 .dx-filtereditor .dx-filtereditor-tree.dx-rtl {
   padding-right: 7px;
@@ -620,13 +612,13 @@
   padding-right: 15px;
   padding-left: 0;
 }
-.dx-popup-content .dx-filtereditor-search .dx-texteditor:not(.dx-multiline):not(.dx-textarea) .dx-texteditor-input {
+.dx-filtereditor-criteriaoperator-popup .dx-popup-normal .dx-popup-content .dx-filtereditor-search .dx-texteditor:not(.dx-multiline):not(.dx-textarea) .dx-texteditor-input {
   font-size: 14px;
   padding-top: 0;
   padding-bottom: 0;
   text-overflow: ellipsis;
 }
-.dx-popup-content .dx-filtereditor-search .dx-texteditor:not(.dx-multiline):not(.dx-textarea) .dx-placeholder {
+.dx-filtereditor-criteriaoperator-popup .dx-popup-normal .dx-popup-content .dx-filtereditor-search .dx-texteditor:not(.dx-multiline):not(.dx-textarea) .dx-placeholder {
   font-size: 14px;
   margin-top: -7px;
 }
@@ -1340,6 +1332,76 @@
 .ui-widget-header .ui-state-disabled {
   opacity: 1;
 }
+.ui-resizable {
+  position: relative;
+}
+.ui-resizable-handle {
+  position: absolute;
+  font-size: 0.1px;
+  display: block;
+  -ms-touch-action: none;
+  touch-action: none;
+}
+.ui-resizable-disabled .ui-resizable-handle,
+.ui-resizable-autohide .ui-resizable-handle {
+  display: none;
+}
+.ui-resizable-n {
+  cursor: n-resize;
+  height: 7px;
+  width: 100%;
+  top: -5px;
+  left: 0;
+}
+.ui-resizable-s {
+  cursor: s-resize;
+  height: 7px;
+  width: 100%;
+  bottom: -5px;
+  left: 0;
+}
+.ui-resizable-e {
+  cursor: e-resize;
+  width: 7px;
+  right: -5px;
+  top: 0;
+  height: 100%;
+}
+.ui-resizable-w {
+  cursor: w-resize;
+  width: 7px;
+  left: -5px;
+  top: 0;
+  height: 100%;
+}
+.ui-resizable-se {
+  cursor: se-resize;
+  width: 12px;
+  height: 12px;
+  right: 1px;
+  bottom: 1px;
+}
+.ui-resizable-sw {
+  cursor: sw-resize;
+  width: 9px;
+  height: 9px;
+  left: -5px;
+  bottom: -5px;
+}
+.ui-resizable-nw {
+  cursor: nw-resize;
+  width: 9px;
+  height: 9px;
+  left: -5px;
+  top: -5px;
+}
+.ui-resizable-ne {
+  cursor: ne-resize;
+  width: 9px;
+  height: 9px;
+  right: -5px;
+  top: -5px;
+}
 .dx-editors .dx-property-grid-search-group {
   position: absolute;
   width: 100%;
@@ -1475,6 +1537,7 @@
   vertical-align: middle;
   height: 40px;
   line-height: 40px;
+  cursor: pointer;
 }
 .dx-ltr.dx-editors .dxrd-group-header {
   padding-left: 15px;
@@ -1576,6 +1639,7 @@
   vertical-align: middle;
   height: 40px;
   line-height: 40px;
+  cursor: pointer;
   border-bottom: none;
   padding-top: 3px;
 }
@@ -1802,7 +1866,7 @@
   top: 1px;
 }
 .dx-editors .dxrd-properties-wrapper .dxrd-editormenu-boxes .dxrd-editormenu-box.dxrd-editor-box-image:not(.dxrd-editormenu-expressions) {
-  opacity: 50%;
+  opacity: 0.5;
 }
 .dx-editors .dxrd-properties-wrapper .dxrd-editormenu-modified:not(.dxrd-editormenu-usestyle) .dxrd-editormenu-box-inside {
   background-color: white;
@@ -2527,6 +2591,7 @@
   vertical-align: middle;
   height: 40px;
   line-height: 40px;
+  cursor: pointer;
   padding-top: 3px;
 }
 .dx-ltr.dxrd-designer-wrapper .dxrd-right-panel .dxrd-right-panel-header {

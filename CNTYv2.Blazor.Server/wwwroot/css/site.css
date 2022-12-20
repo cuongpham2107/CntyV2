@@ -69,3 +69,28 @@ app {
 #logon-template-component .span {
     padding-left: 20px;
 }
+.middle-text-separator {
+    display: none;
+}
+div#id23f4a157-5896-43d8-a4f2-ebe7cede9b76 {
+    display: none;
+}
+
+.button-column span {
+    display: none;
+}
+.clickable-xaf-nav-item > a .xaf-nav-link, .clickable-xaf-nav-item > div > a .xaf-nav-link{
+    text-decoration:none;
+}
+.sidebar {
+    min-width: 275px !important;
+}
+.custom-sidebar .xaf-nav-link span {
+    width: max-content;
+}
+.toolbar button {
+    -webkit-box-shadow: 0 2px 6px 0 rgb(0 0 0 / 20%);
+    box-shadow: 0 2px 6px 0 rgb(0 0 0 / 20%);
+    border-radius: .2rem;
+    padding: .40625rem .75rem;
+}

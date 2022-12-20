@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <DetailView Id="KyBaoCao_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="KyBaoCao">
+              <LayoutItem Id="CoQuanQuanLy" ViewItem="CoQuanQuanLy" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="KyBaoCao_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="CoQuanQuanLy" SortOrder="Ascending" GroupIndex="0" />
+      </Columns>
+    </ListView>
+  </Views>
+</Application>

@@ -12,3 +12,6 @@ C:\Users\cuong\source\repos\CNTYv2\CNTYv2.Module\obj\Debug\net6.0\CNTYv2.Module.
 C:\Users\cuong\source\repos\CNTYv2\CNTYv2.Module\obj\Debug\net6.0\ref\CNTYv2.Module.dll
 C:\Users\cuong\source\repos\CNTYv2\CNTYv2.Module\bin\Debug\net6.0\vi\CNTYv2.Module.resources.dll
 C:\Users\cuong\source\repos\CNTYv2\CNTYv2.Module\obj\Debug\net6.0\vi\CNTYv2.Module.resources.dll
+C:\Users\cuong\source\repos\CNTYv2\CNTYv2.Module\bin\Debug\net6.0\DevExpress.ExpressApp.Blazor.v22.2.dll
+C:\Users\cuong\source\repos\CNTYv2\CNTYv2.Module\bin\Debug\net6.0\DevExpress.ExpressApp.Blazor.v22.2.xml
+C:\Users\cuong\source\repos\CNTYv2\CNTYv2.Module\obj\Debug\net6.0\CNTYv2.Module.csproj.CopyComplete

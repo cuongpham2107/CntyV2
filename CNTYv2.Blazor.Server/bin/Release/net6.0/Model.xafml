@@ -1,5 +1,70 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Application>
+<Application PreferredLanguage="vi">
+  <ActionDesign>
+    <Actions>
+      <Action Id="ColumnChooser" CustomCSSClassName="button-column" ConfirmUnsavedChanges="True" />
+    </Actions>
+  </ActionDesign>
+  <NavigationItems>
+    <Items>
+      <Item Id="🛅 Quản lý dữ liệu" ImageName="" />
+      <Item Id="Default" Caption="⚙ Cài đặt" ImageName="">
+        <Items>
+          <Item Id="ApplicationUser_ListView" Caption="Chi tiết tài khoản" />
+          <Item Id="MyDetails" Caption="Tài khoản" />
+          <Item Id="PermissionPolicyRole_ListView" Caption="Phân quyền" />
+        </Items>
+      </Item>
+      <Item Id="Quản lý đàn giống" ImageName="" />
+      <Item Id="Quản lý thức ăn chăn nuôi" ImageName="" />
+      <Item Id="Quản lý trang trại" ImageName="" />
+      <Item Id="Reports" Caption="🖨 In - báo cáo " ImageName="">
+        <Items>
+          <Item Id="Dashboards" Caption="Trang quản lý" />
+          <Item Id="ReportsV2" Caption="Báo cáo" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <SchemaModules>
+    <SchemaModule Name="CloneObjectModule" Version="22.2.3.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="22.2.3.0" IsNewNode="True" />
+  </SchemaModules>
   <Views DefaultListEditor="DevExpress.ExpressApp.Blazor.Editors.DxGridListEditor">
+    <ListView Id="ThongKeChanNuoi_ListView" ShowAutoFilterRow="True" IsGroupPanelVisible="True">
+      <Columns>
+        <ColumnInfo Id="LHChanNuoi" Index="1" SortOrder="Descending" GroupIndex="1" />
+        <ColumnInfo Id="SoCoSo" Index="2" />
+        <ColumnInfo Id="PhanLoaiCoSoChanNuoi" SortOrder="Descending" GroupIndex="0" Index="3" />
+      </Columns>
+    </ListView>
+    <DetailView Id="TrangTraiChanNuoi_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="32.20640569395018">
+            <TabbedGroup Id="Item1">
+              <LayoutGroup Id="TrangTraiChanNuoi" Caption="Trang trại chăn nuôi">
+                <LayoutGroup Id="TrangTraiChanNuoi_col1" RelativeSize="49.37062937062937">
+                  <LayoutItem Id="TenTrangTrai" RelativeSize="23.529411764705884" />
+                  <LayoutItem Id="CoQuanQuanLy" ViewItem="CoQuanQuanLy" Index="1" RelativeSize="17.647058823529413" IsNewNode="True" />
+                  <LayoutItem Id="LoaiHinhSoHuu" RelativeSize="17.647058823529413" Index="2" />
+                  <LayoutItem Id="DiaChiSoDienThoai" RelativeSize="17.647058823529413" Index="3" />
+                  <LayoutItem Id="PhanLoaiCoSoChanNuoi" ViewItem="PhanLoaiCoSoChanNuoi" Index="4" RelativeSize="23.529411764705884" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="TrangTraiChanNuoi_col2" RelativeSize="50.62937062937063">
+                  <LayoutItem Id="LoaiVatNuoi" ViewItem="LoaiVatNuoi" Index="0" RelativeSize="23.529411764705884" IsNewNode="True" />
+                  <LayoutItem Id="QuyMoChanNuoi" ViewItem="QuyMoChanNuoi" Index="1" RelativeSize="17.647058823529413" IsNewNode="True" />
+                  <LayoutItem Id="GhiChu" RelativeSize="58.8235294117647" Index="2" />
+                  <LayoutItem Id="CoQuanQuanLy" RelativeSize="16.901408450704224" Removed="True" />
+                  <LayoutItem Id="PhanLoaiCoSoChanNuoi" RelativeSize="22.535211267605632" Removed="True" />
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutGroup Id="TrangTrai_VatNuois" ShowCaption="False" />
+            </TabbedGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="67.79359430604983" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
   </Views>
 </Application>

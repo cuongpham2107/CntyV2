@@ -20,9 +20,21 @@ public class CNTYv2BlazorApplication : BlazorApplication {
         {
             return new CustomLogonWindowTemplate();
         }
+        if(context == TemplateContext.NestedFrame)
+        {
+            return new CustomNestedFrameTemplate();
+        }
+        if(context == TemplateContext.ApplicationWindow)
+        {
+            return new CustomApplicationWindowTemplate();
+        }
         return base.CreateDefaultTemplate(context);
+
+        
     }
     public CNTYv2BlazorApplication() {
+
+        LinkNewObjectToParentImmediately = true;
         ApplicationName = "CNTYv2";
         CheckCompatibilityType = DevExpress.ExpressApp.CheckCompatibilityType.DatabaseSchema;
         DatabaseVersionMismatch += CNTYv2BlazorApplication_DatabaseVersionMismatch;
@@ -30,7 +42,7 @@ public class CNTYv2BlazorApplication : BlazorApplication {
         CustomizeTemplate += (s, e) => {
             if (e.Template is IPopupWindowTemplateSize size)
             {
-                size.MaxWidth = "80vw";
+                size.MaxWidth = "90vw";
                 //size.Width = "1000px";
                 //size.MaxHeight = "70vh";
                 //size.Height = "800px";

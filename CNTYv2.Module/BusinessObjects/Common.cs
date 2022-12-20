@@ -17,7 +17,7 @@ namespace CNTYv2.Module.BusinessObjects
             [XafDisplayName("Chăn nuôi nông hộ ")] cnnh = 3,
             [XafDisplayName("Chưa chọn")] chuchon = 4,
         }
-
+         
         enum Loai_Cc
         {
             [XafDisplayName("Nái sinh sản")] nss = 1,
@@ -25,11 +25,11 @@ namespace CNTYv2.Module.BusinessObjects
 
         }
 
-        public enum LoaiTienDo
-        {
-            [XafDisplayName("Năm")] n = 0,
-            [XafDisplayName("Từ năm - đến năm")] nn = 1,
-            [XafDisplayName("Text")] t = 2,
-        }
+        //public enum LoaiTienDo
+        //{
+        //    [XafDisplayName("Năm")] n = 0,
+        //    [XafDisplayName("Từ năm - đến năm")] nn = 1,
+        //    [XafDisplayName("Text")] t = 2,
+        //}
     }
 }

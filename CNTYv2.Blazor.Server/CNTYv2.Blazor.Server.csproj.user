@@ -3,4 +3,9 @@
   <PropertyGroup>
     <NameOfLastUsedPublishProfile>C:\Users\cuong\source\repos\CNTYv2\CNTYv2.Blazor.Server\Properties\PublishProfiles\FolderProfile.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
+  <ItemGroup>
+    <Content Update="Model_vi.xafml">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
 </Project>

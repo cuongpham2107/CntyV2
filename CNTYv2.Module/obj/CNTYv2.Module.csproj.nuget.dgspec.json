@@ -15,11 +15,13 @@
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\DevExpress 22.1\\Components\\Offline Packages",
+          "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages",
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
           "C:\\Users\\cuong\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 22.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 22.2.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -29,6 +31,7 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\DevExpress 22.1\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files\\DevExpress 22.2\\Components\\System\\Components\\Packages": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {},
           "https://nuget.devexpress.com/zjZmuAc2mIfzhQ9hE9LPZnpMdAcEpKZjLT6BmG9lMCrD58b78R/api": {}
@@ -51,67 +54,71 @@
           "dependencies": {
             "DevExpress.ExpressApp": {
               "target": "Package",
-              "version": "[22.1.6, )"
+              "version": "[22.2.3, )"
             },
             "DevExpress.ExpressApp.AuditTrail.Xpo": {
               "target": "Package",
-              "version": "[22.1.6, )"
+              "version": "[22.2.3, )"
             },
             "DevExpress.ExpressApp.CloneObject.Xpo": {
               "target": "Package",
-              "version": "[22.1.6, )"
+              "version": "[22.2.3, )"
             },
             "DevExpress.ExpressApp.CodeAnalysis": {
               "target": "Package",
-              "version": "[22.1.6, )"
+              "version": "[22.2.3, )"
             },
             "DevExpress.ExpressApp.ConditionalAppearance": {
               "target": "Package",
-              "version": "[22.1.6, )"
+              "version": "[22.2.3, )"
             },
             "DevExpress.ExpressApp.Dashboards": {
               "target": "Package",
-              "version": "[22.1.6, )"
+              "version": "[22.2.3, )"
             },
             "DevExpress.ExpressApp.Objects": {
               "target": "Package",
-              "version": "[22.1.6, )"
+              "version": "[22.2.3, )"
             },
             "DevExpress.ExpressApp.Office": {
               "target": "Package",
-              "version": "[22.1.6, )"
+              "version": "[22.2.3, )"
             },
             "DevExpress.ExpressApp.ReportsV2": {
               "target": "Package",
-              "version": "[22.1.6, )"
+              "version": "[22.2.3, )"
             },
             "DevExpress.ExpressApp.Security.Xpo": {
               "target": "Package",
-              "version": "[22.1.6, )"
+              "version": "[22.2.3, )"
             },
             "DevExpress.ExpressApp.StateMachine": {
               "target": "Package",
-              "version": "[22.1.6, )"
+              "version": "[22.2.3, )"
             },
             "DevExpress.ExpressApp.Validation": {
               "target": "Package",
-              "version": "[22.1.6, )"
+              "version": "[22.2.3, )"
             },
             "DevExpress.ExpressApp.ViewVariantsModule": {
               "target": "Package",
-              "version": "[22.1.6, )"
+              "version": "[22.2.3, )"
             },
             "DevExpress.ExpressApp.Xpo": {
               "target": "Package",
-              "version": "[22.1.6, )"
+              "version": "[22.2.3, )"
             },
             "DevExpress.Persistent.Base": {
               "target": "Package",
-              "version": "[22.1.6, )"
+              "version": "[22.2.3, )"
             },
             "DevExpress.Persistent.BaseImpl.Xpo": {
               "target": "Package",
-              "version": "[22.1.6, )"
+              "version": "[22.2.3, )"
+            },
+            "EPPlus": {
+              "target": "Package",
+              "version": "[6.1.1, )"
             },
             "MySql.Data": {
               "target": "Package",

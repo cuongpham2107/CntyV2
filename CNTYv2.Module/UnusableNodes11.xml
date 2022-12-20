@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <DetailView Id="VatNuoi_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="15.60798548094374">
+            <LayoutGroup Id="VatNuoi" RelativeSize="100">
+              <LayoutItem Id="TenLoaiVatNuoi" RelativeSize="37.2093023255814" />
+              <LayoutItem Id="LoaiVatNuoi" RelativeSize="27.906976744186046" />
+              <LayoutItem Id="MoTa" RelativeSize="34.883720930232556" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="84.39201451905626">
+            <LayoutGroup Id="LoaiDanGiongs" Index="0" RelativeSize="100">
+              <LayoutItem Id="LoaiDanGiongs" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="TrangTrai_VatNuois" Removed="True" />
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="VatNuoi_TrangTrai_VatNuois_ListView" MasterDetailMode="ListViewOnly" />
+    <DetailView Id="TrangTraiChanNuoi_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <TabbedGroup Id="Item1">
+              <LayoutGroup Id="TrangTrai_VatNuois">
+                <LayoutItem Id="TrangTrai_VatNuois" ViewItem="TrangTrai_VatNuois" />
+              </LayoutGroup>
+            </TabbedGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs">
+            <LayoutGroup Id="TrangTrai_VatNuois" Removed="True" />
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

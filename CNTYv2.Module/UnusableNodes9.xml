@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <DetailView Id="BPXLMT_ChanNuoiNongHo_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="BPXLMT_ChanNuoiNongHo">
+              <LayoutGroup Id="BPXLMT_ChanNuoiNongHo_col1">
+                <LayoutItem Id="Bo" RelativeSize="81.00358422939068" />
+              </LayoutGroup>
+              <LayoutGroup Id="BPXLMT_ChanNuoiNongHo_col2">
+                <LayoutItem Id="GhiChu" RelativeSize="85.30465949820788" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

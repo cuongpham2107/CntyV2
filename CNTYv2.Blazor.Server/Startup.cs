@@ -33,8 +33,19 @@ public class Startup {
         services.AddServerSideBlazor();
         services.AddHttpContextAccessor();
         services.AddScoped<CircuitHandler, CircuitHandlerProxy>();
+
+        //SizeMode
+        services.AddDevExpressBlazor(options =>
+        {
+            options.SizeMode = DevExpress.Blazor.SizeMode.Large;
+            options.BootstrapVersion = DevExpress.Blazor.BootstrapVersion.v5;
+           
+        });
+
+
         services.AddXaf(Configuration, builder => {
             builder.UseApplication<CNTYv2BlazorApplication>();
+            
             builder.Modules
                 .AddAuditTrailXpo(options => {
                     options.AuditDataItemPersistentType = typeof(DevExpress.Persistent.BaseImpl.AuditDataItemPersistent);
@@ -77,6 +88,7 @@ public class Startup {
                     options.UseSharedDataStoreProvider = true;
                 })
                 .AddNonPersistent();
+            
             builder.Security
                 .UseIntegratedMode(options => {
                     options.RoleType = typeof(PermissionPolicyRole);
