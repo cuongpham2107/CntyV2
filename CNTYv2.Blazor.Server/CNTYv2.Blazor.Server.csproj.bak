@@ -21,19 +21,27 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="DevExpress.ExpressApp.Blazor" Version="22.1.6" />
-    <PackageReference Include="DevExpress.ExpressApp.CodeAnalysis" Version="22.1.6" />
-    <PackageReference Include="DevExpress.ExpressApp.Dashboards.Blazor" Version="22.1.6" />
-    <PackageReference Include="DevExpress.ExpressApp.FileAttachment.Blazor" Version="22.1.6" />
-    <PackageReference Include="DevExpress.ExpressApp.Office.Blazor" Version="22.1.6" />
-    <PackageReference Include="DevExpress.ExpressApp.ReportsV2.Blazor" Version="22.1.6" />
-    <PackageReference Include="DevExpress.ExpressApp.Security.Xpo" Version="22.1.6" />
-    <PackageReference Include="DevExpress.ExpressApp.Validation.Blazor" Version="22.1.6" />
+    <PackageReference Include="DevExpress.ExpressApp.Blazor" Version="22.2.3" />
+    <PackageReference Include="DevExpress.ExpressApp.CodeAnalysis" Version="22.2.3" />
+    <PackageReference Include="DevExpress.ExpressApp.Dashboards.Blazor" Version="22.2.3" />
+    <PackageReference Include="DevExpress.ExpressApp.FileAttachment.Blazor" Version="22.2.3" />
+    <PackageReference Include="DevExpress.ExpressApp.Office.Blazor" Version="22.2.3" />
+    <PackageReference Include="DevExpress.ExpressApp.ReportsV2.Blazor" Version="22.2.3" />
+    <PackageReference Include="DevExpress.ExpressApp.Security.Xpo" Version="22.2.3" />
+    <PackageReference Include="DevExpress.ExpressApp.Validation.Blazor" Version="22.2.3" />
     <PackageReference Include="EPPlus" Version="6.1.1" />
     <PackageReference Include="Microsoft.Identity.Web.UI" Version="1.5.1" />
     <PackageReference Include="MySql.Data" Version="8.0.31" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CNTYv2.Module\CNTYv2.Module.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="UnusableNodes.xml">
+      <DependentUpon>Model.xafml</DependentUpon>
+    </None>
+    <None Update="UnusableNodes1.xml">
+      <DependentUpon>Model.xafml</DependentUpon>
+    </None>
   </ItemGroup>
 </Project>

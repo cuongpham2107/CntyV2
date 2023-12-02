@@ -15,3 +15,17 @@ C:\Users\cuong\source\repos\CNTYv2\CNTYv2.Module\obj\Release\net6.0\vi\CNTYv2.Mo
 C:\Users\cuong\source\repos\CNTYv2\CNTYv2.Module\bin\Release\net6.0\DevExpress.ExpressApp.Blazor.v22.2.dll
 C:\Users\cuong\source\repos\CNTYv2\CNTYv2.Module\bin\Release\net6.0\DevExpress.ExpressApp.Blazor.v22.2.xml
 C:\Users\cuong\source\repos\CNTYv2\CNTYv2.Module\obj\Release\net6.0\CNTYv2.Module.csproj.CopyComplete
+D:\CntyV2\CNTYv2.Module\obj\Release\net6.0\CNTYv2.Module.csproj.AssemblyReference.cache
+D:\CntyV2\CNTYv2.Module\obj\Release\net6.0\CNTYv2.Module.GeneratedMSBuildEditorConfig.editorconfig
+D:\CntyV2\CNTYv2.Module\obj\Release\net6.0\CNTYv2.Module.AssemblyInfoInputs.cache
+D:\CntyV2\CNTYv2.Module\obj\Release\net6.0\CNTYv2.Module.AssemblyInfo.cs
+D:\CntyV2\CNTYv2.Module\obj\Release\net6.0\CNTYv2.Module.csproj.CoreCompileInputs.cache
+D:\CntyV2\CNTYv2.Module\obj\Release\net6.0\CNTYv2.Module.dll
+D:\CntyV2\CNTYv2.Module\obj\Release\net6.0\refint\CNTYv2.Module.dll
+D:\CntyV2\CNTYv2.Module\obj\Release\net6.0\CNTYv2.Module.pdb
+D:\CntyV2\CNTYv2.Module\bin\Release\net6.0\CNTYv2.Module.deps.json
+D:\CntyV2\CNTYv2.Module\bin\Release\net6.0\CNTYv2.Module.dll
+D:\CntyV2\CNTYv2.Module\bin\Release\net6.0\CNTYv2.Module.pdb
+D:\CntyV2\CNTYv2.Module\bin\Release\net6.0\vi\CNTYv2.Module.resources.dll
+D:\CntyV2\CNTYv2.Module\obj\Release\net6.0\vi\CNTYv2.Module.resources.dll
+D:\CntyV2\CNTYv2.Module\obj\Release\net6.0\ref\CNTYv2.Module.dll

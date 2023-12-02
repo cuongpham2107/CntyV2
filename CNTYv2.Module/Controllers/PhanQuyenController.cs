@@ -2,9 +2,6 @@
 using DevExpress.Data.Filtering;
 using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.Actions;
-using DevExpress.ExpressApp.Blazor.Editors;
-using DevExpress.ExpressApp.Blazor.Editors.Adapters;
-using DevExpress.ExpressApp.Blazor.SystemModule;
 using DevExpress.ExpressApp.Editors;
 using DevExpress.ExpressApp.Layout;
 using DevExpress.ExpressApp.Model.NodeGenerators;
@@ -71,16 +68,7 @@ namespace CNTYv2.Module.Controllers
         }
 
     }
-    public class CustomizeInlinePropertyEditorController : ViewController<ListView>
-    {
-        protected override void OnActivated()
-        {
-            base.OnActivated();
-            if (View.Editor.Model is IModelListViewBlazor model) 
-                model.InlineEditMode = InlineEditMode.EditForm;
-        }
-      
-    }
+    
     public partial class DisableValidatedCoCauDanGiong : ObjectViewController<DetailView, CoCauDanGiong>
     {
         protected override void OnActivated()

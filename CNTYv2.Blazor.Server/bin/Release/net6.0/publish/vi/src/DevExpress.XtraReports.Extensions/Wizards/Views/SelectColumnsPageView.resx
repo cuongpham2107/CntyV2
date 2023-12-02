@@ -133,7 +133,7 @@
     <value>panelAdditionalButtons</value>
   </data>
   <data name="&gt;&gt;panelAdditionalButtons.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.PanelControl, DevExpress.Utils.v20.2, Culture=neutral</value>
+    <value>DevExpress.XtraEditors.PanelControl, DevExpress.Utils.v22.2, Culture=neutral</value>
   </data>
   <data name="&gt;&gt;panelAdditionalButtons.Parent" xml:space="preserve">
     <value>layoutControlBase</value>

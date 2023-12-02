@@ -1,23 +1,23 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\cuong\\source\\repos\\CNTYv2\\CNTYv2.Blazor.Server\\wwwroot\\css\\site.css",
+      "Id": "D:\\CntyV2\\CNTYv2.Blazor.Server\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\Users\\cuong\\source\\repos\\CNTYv2\\CNTYv2.Blazor.Server\\wwwroot\\favicon.ico",
+      "Id": "D:\\CntyV2\\CNTYv2.Blazor.Server\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\cuong\\source\\repos\\CNTYv2\\CNTYv2.Blazor.Server\\wwwroot\\images\\Logo.svg",
+      "Id": "D:\\CntyV2\\CNTYv2.Blazor.Server\\wwwroot\\images\\Logo.svg",
       "PackagePath": "staticwebassets\\images\\Logo.svg"
     },
     {
-      "Id": "C:\\Users\\cuong\\source\\repos\\CNTYv2\\CNTYv2.Blazor.Server\\wwwroot\\images\\SplashScreen.svg",
+      "Id": "D:\\CntyV2\\CNTYv2.Blazor.Server\\wwwroot\\images\\SplashScreen.svg",
       "PackagePath": "staticwebassets\\images\\SplashScreen.svg"
     },
     {
-      "Id": "C:\\Users\\cuong\\source\\repos\\CNTYv2\\CNTYv2.Blazor.Server\\wwwroot\\images\\logo.png",
+      "Id": "D:\\CntyV2\\CNTYv2.Blazor.Server\\wwwroot\\images\\logo.png",
       "PackagePath": "staticwebassets\\images\\logo.png"
     },
     {
